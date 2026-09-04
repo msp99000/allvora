@@ -1,26 +1,437 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   ALLVORA DESIGN SYSTEM
+   PROJECT_BRIEF.md Section 3. Palette derived from the peacock-feather-and-
+   globe mark: teal barbs, gold eye ring, cobalt core, on warm ivory.
+
+   Contrast, verified against WCAG AA:
+     ink-900 / ivory-50      16.01
+     ink-600 / ivory-50       7.92   secondary text
+     ink-500 / ivory-50       5.29   spec labels, captions
+     peacock-600 / ivory-50   5.92   links
+     gold-500 / ivory-50      2.74   FAILS. Fills and rules only, never text.
+     gold-700 / ivory-50      4.80   the text gold
+     ink-900 / gold-500       5.84   the gold CTA
+     ivory-50 / peacock-900  11.56   the teal bands
+     gold-300 / peacock-900   6.36   gold text on teal
+   ========================================================================== */
+
+@theme {
+  --color-peacock-900: #0e3b36;
+  --color-peacock-800: #10453f;
+  --color-peacock-700: #14514a;
+  --color-peacock-600: #1b6b5f;
+  --color-peacock-100: #d8e6e2;
+
+  /* gold-500 is a fill and rule colour. Use gold-700 for text on ivory and
+     gold-300 for text on peacock. */
+  --color-gold-500: #c98a2b;
+  --color-gold-700: #96630f;
+  --color-gold-300: #e3b25e;
+  --color-gold-100: #f2e3c7;
+
+  --color-cobalt-700: #1f3a8a;
+
+  --color-ivory-50: #faf7f0;
+  --color-ivory-100: #f2ece0;
+  --color-ivory-200: #e7dfd0;
+
+  --color-ink-900: #221a14;
+  --color-ink-600: #5a4a3c;
+  --color-ink-500: #756456;
+
+  /* Hairlines. Section 6: 1px rules in ink-900 at 15%. */
+  --color-rule: color-mix(in srgb, #221a14 15%, transparent);
+  --color-rule-strong: color-mix(in srgb, #221a14 30%, transparent);
+  --color-rule-invert: color-mix(in srgb, #faf7f0 22%, transparent);
+
+  --font-display: var(--font-caslon), "Iowan Old Style", "Palatino Linotype",
+    Georgia, serif;
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Squared, document-like. Nothing on this site is a soft rounded card. */
+  --radius-ledger: 2px;
+
+  --tracking-eyebrow: 0.14em;
+
+  --ease-reveal: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-ivory-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-peacock-900);
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+  }
+
+  /* Section 3.4: visible keyboard focus, gold on peacock, peacock on ivory. */
+  :focus-visible {
+    outline: 2px solid var(--color-peacock-600);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  .on-peacock :focus-visible,
+  .on-peacock:focus-visible {
+    outline-color: var(--color-gold-500);
+  }
+
+  ::selection {
+    background-color: var(--color-gold-100);
+    color: var(--color-ink-900);
+  }
+
+  /* Skip link. Visible only when focused. */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    padding: 0.65rem 1rem;
+    background: var(--color-peacock-900);
+    color: var(--color-ivory-50);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* ---- Mono eyebrow. Section 3.2: SPICES / RED CHILLI / TEJA S17 ---- */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-ink-500);
+    line-height: 1.5;
+  }
+
+  /* ---- The Specification Ledger. The signature element. ----
+     Mono values, hairline rules, no zebra fills, a stamped grade badge and a
+     document footer row. It should read as an export document. */
+  .ledger {
+    border-top: 1px solid var(--color-rule-strong);
+    border-bottom: 1px solid var(--color-rule-strong);
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .ledger caption {
+    caption-side: top;
+    text-align: left;
+    padding-bottom: 0.75rem;
+  }
+
+  .ledger thead th {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-ink-500);
+    text-align: left;
+    font-weight: 500;
+    padding: 0.6rem 1rem 0.6rem 0;
+    border-bottom: 1px solid var(--color-rule-strong);
+    background-color: var(--color-ivory-50);
+    white-space: nowrap;
+  }
+
+  .ledger tbody td {
+    padding: 0.9rem 1rem 0.9rem 0;
+    border-bottom: 1px solid var(--color-rule);
+    vertical-align: top;
+    color: var(--color-ink-600);
+  }
+
+  .ledger tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .ledger tbody th[scope="row"] {
+    padding: 0.9rem 1rem 0.9rem 0;
+    border-bottom: 1px solid var(--color-rule);
+    vertical-align: top;
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: var(--color-peacock-900);
+    white-space: nowrap;
+  }
+
+  .ledger tbody tr:last-child th[scope="row"] {
+    border-bottom: 0;
+  }
+
+  /* Specification values read as data, not as prose. */
+  /* Row label in the single-variety SpecList: wraps, and reads as a field
+     label rather than as a variety name. */
+  .ledger tbody th.ledger-label {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-ink-500);
+    white-space: normal;
+    width: 13rem;
+  }
+
+  .ledger-spec {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: var(--color-ink-600);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ledger-foot {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink-500);
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--color-rule-strong);
+    margin-top: -1px;
+  }
+
+  /* Stamped grade badge. Double rule, uppercase mono, ink on a faint gold
+     wash, the way a grade stamp reads on an inspection docket. */
+  .stamp {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold-700);
+    background-color: color-mix(in srgb, var(--color-gold-100) 45%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-gold-700) 45%, transparent);
+    box-shadow: inset 0 0 0 1px var(--color-ivory-50);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-ledger);
+    white-space: nowrap;
+  }
+
+  .stamp-peacock {
+    color: var(--color-peacock-700);
+    background-color: color-mix(in srgb, var(--color-peacock-100) 40%, transparent);
+    border-color: color-mix(in srgb, var(--color-peacock-700) 35%, transparent);
+  }
+
+  /* Form badges. Quieter than the grade stamp: forms are a list, not a grade. */
+  .form-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    color: var(--color-ink-600);
+    border: 1px solid var(--color-rule-strong);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-ledger);
+    white-space: nowrap;
+  }
+
+  /* Horizontal scroll with an edge fade, so a 4-column ledger is never
+     squashed below 640px. Section 6. */
+  .ledger-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (max-width: 767px) {
+    .ledger-scroll {
+      mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 14px,
+        #000 calc(100% - 26px),
+        transparent 100%
+      );
+    }
+    .ledger-scroll > table {
+      min-width: 44rem;
+    }
+  }
+
+  /* ---- Editorial prose, used for MDX blog bodies ---- */
+  .prose-allvora {
+    color: var(--color-ink-600);
+    max-width: 40rem;
+  }
+  .prose-allvora > * + * {
+    margin-top: 1.15em;
+  }
+  .prose-allvora h2 {
+    font-size: 1.5rem;
+    margin-top: 2.4em;
+    line-height: 1.25;
+  }
+  .prose-allvora h3 {
+    font-size: 1.175rem;
+    margin-top: 1.9em;
+    line-height: 1.3;
+  }
+  .prose-allvora a {
+    color: var(--color-peacock-600);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--color-peacock-600) 40%, transparent);
+  }
+  .prose-allvora a:hover {
+    text-decoration-color: var(--color-gold-500);
+  }
+  .prose-allvora ul,
+  .prose-allvora ol {
+    padding-left: 1.15rem;
+  }
+  .prose-allvora ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .prose-allvora ul > li {
+    position: relative;
+    padding-left: 1.15rem;
+  }
+  .prose-allvora ul > li + li {
+    margin-top: 0.5em;
+  }
+  .prose-allvora ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 5px;
+    height: 1px;
+    background: var(--color-gold-500);
+  }
+  .prose-allvora ol {
+    list-style: decimal;
+  }
+  .prose-allvora ol > li + li {
+    margin-top: 0.5em;
+  }
+  .prose-allvora strong {
+    color: var(--color-ink-900);
+    font-weight: 600;
+  }
+  .prose-allvora blockquote {
+    border-left: 2px solid var(--color-gold-500);
+    padding-left: 1.15rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-peacock-900);
+  }
+  .prose-allvora table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .prose-allvora th {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--color-ink-500);
+    padding: 0.5rem 1rem 0.5rem 0;
+    border-bottom: 1px solid var(--color-rule-strong);
+  }
+  .prose-allvora td {
+    padding: 0.7rem 1rem 0.7rem 0;
+    border-bottom: 1px solid var(--color-rule);
+    vertical-align: top;
+  }
+}
+
+@layer utilities {
+  /* ---- Motion. Section 3.2: one orchestrated hero reveal, fade-ins for
+     section headings, subtle hover lift. Nothing else. ---- */
+  @keyframes allvora-rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .reveal {
+    animation: allvora-rise 380ms var(--ease-reveal) both;
+  }
+
+  .reveal-1 { animation-delay: 60ms; }
+  .reveal-2 { animation-delay: 140ms; }
+  .reveal-3 { animation-delay: 220ms; }
+  .reveal-4 { animation-delay: 300ms; }
+
+  /* Scroll-triggered fade for section headings, CSS only, no observer JS. */
+  .reveal-on-scroll {
+    animation: allvora-rise 500ms var(--ease-reveal) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
+  }
+
+  .lift {
+    transition:
+      transform 180ms var(--ease-reveal),
+      border-color 180ms var(--ease-reveal);
+  }
+  .lift:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Section 3.4 and the pre-launch checklist: reduced motion disables reveals. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .reveal-on-scroll {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .lift:hover {
+    transform: none;
+  }
 }

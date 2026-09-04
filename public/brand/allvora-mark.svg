@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Allvora Resources">
+  <title>Allvora Resources</title>
+  <!-- Placeholder mark. Peacock feather barbs sweeping across a globe, with the
+       feather eye ring in gold and a cobalt core. Replace with the supplied
+       brand asset before launch (see CONTENT_REVIEW.md). -->
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#0E3B36" stroke-width="1.6"/>
+  <ellipse cx="32" cy="32" rx="10" ry="23" fill="none" stroke="#0E3B36" stroke-width="1" opacity="0.45"/>
+  <path d="M9.5 25.5h45M9.5 38.5h45" stroke="#0E3B36" stroke-width="1" opacity="0.45"/>
+  <g stroke="#1B6B5F" fill="none" stroke-linecap="round">
+    <path d="M8 56C16 36 28 22 46 14" stroke-width="1.8"/>
+    <path d="M12 57C21 39 32 26 49 19" stroke-width="1.2" opacity="0.75"/>
+    <path d="M16 58C25 42 36 30 52 24" stroke-width="1" opacity="0.5"/>
+  </g>
+  <circle cx="44" cy="20" r="8.5" fill="#FAF7F0" stroke="#C98A2B" stroke-width="2"/>
+  <circle cx="44" cy="20" r="3.4" fill="#1F3A8A"/>
+</svg>
