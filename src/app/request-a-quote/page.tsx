@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 
 import { RfqForm } from "@/components/product/RfqForm";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { Container } from "@/components/shared/Container";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import { site } from "@/data/site";
+import { resolvePrefill } from "@/lib/rfq-prefill";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -24,7 +24,18 @@ const checklist = [
   "Certifications or test parameters your market requires",
 ];
 
-export default function RequestAQuotePage() {
+/**
+ * Server-rendered rather than static: the form's starting values come from the
+ * query string, so resolving them here puts the correct selects in the initial
+ * HTML. Doing it on the client needed a Suspense boundary whose fallback swap
+ * measured a 0.173 layout shift.
+ */
+export default async function RequestAQuotePage({
+  searchParams,
+}: PageProps<"/request-a-quote">) {
+  const params = await searchParams;
+  const prefill = resolvePrefill(params);
+
   return (
     <>
       <section className="border-b border-rule">
@@ -52,13 +63,7 @@ export default function RequestAQuotePage() {
       <section>
         <Container className="py-16 sm:py-20">
           <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
-            <Suspense
-              fallback={
-                <p className="eyebrow text-ink-500">Loading the form…</p>
-              }
-            >
-              <RfqForm />
-            </Suspense>
+            <RfqForm prefill={prefill} />
 
             <aside className="lg:pt-2">
               <div className="border-t border-rule-strong pt-6">

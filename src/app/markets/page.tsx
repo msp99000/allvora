@@ -14,7 +14,7 @@ import { buildMetadata, itemListJsonLd } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Markets We Serve",
   description:
-    "Allvora Resources serves buyers across Europe, the Middle East, North America, Africa, Southeast Asia, South Asia and Australia and New Zealand, with destination-specific documentation.",
+    "We serve buyers across Europe, the Middle East, North America, Africa, Southeast Asia, South Asia and Australia and New Zealand, with per-market documentation.",
   path: "/markets",
   eyebrow: "MARKETS",
 });

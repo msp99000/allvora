@@ -15,7 +15,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "About Allvora Resources",
   description:
-    "Allvora Resources is an India-based export and sourcing company supplying agricultural, food, natural and processed products to international markets, to buyer specification.",
+    "Allvora Resources is an India-based export and sourcing company supplying agricultural, food and natural products to international buyers, to specification.",
   path: "/about",
   eyebrow: "THE COMPANY",
 });

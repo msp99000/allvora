@@ -14,7 +14,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Quality & Certifications",
   description:
-    "Certified spice and food exporter from India. Specifications cover grade, moisture, purity, chemical and microbiological parameters, with COA and export documentation per shipment.",
+    "Certified spice and food exporter from India. Specify grade, moisture, purity, chemical and microbiological limits, with COA and documentation per shipment.",
   path: "/quality-and-certifications",
   eyebrow: "QUALITY FIRST",
 });

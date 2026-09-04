@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 /**
@@ -21,11 +20,7 @@ export function Logo({
   compact?: boolean;
 }) {
   return (
-    <Link
-      href="/"
-      aria-label={`${site.name}, home`}
-      className={cn("group flex items-center gap-3", className)}
-    >
+    <Link href="/" className={cn("group flex items-center gap-3", className)}>
       <svg
         viewBox="0 0 64 64"
         aria-hidden
@@ -71,7 +66,7 @@ export function Logo({
         <span
           className={cn(
             "eyebrow mt-0.5 text-[0.5625rem]",
-            onDark ? "text-ivory-50/60" : "text-ink-500",
+            onDark ? "text-ivory-50/70" : "text-ink-500",
             compact && "hidden sm:block"
           )}
         >

@@ -19,7 +19,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Indian Agricultural & Spice Exporter",
   description:
-    "Allvora Resources supplies spices, Basmati rice, ghee, tea, coffee and natural products from India to international buyers, sourced to your specification with export documentation.",
+    "Indian exporter of spices, Basmati rice, ghee, tea, coffee and natural products, sourced to your specification and shipped with full export documentation.",
   path: "/",
   eyebrow: "EXPORT & SOURCING · INDIA",
 });
@@ -113,7 +113,7 @@ export default function HomePage() {
         <FeatherArcOnDark className="absolute -right-10 bottom-0 h-full w-[34rem] opacity-90" />
         <Container className="relative py-20 sm:py-24">
           <div className="max-w-3xl">
-            <Eyebrow className="text-ivory-50/55">Documentation</Eyebrow>
+            <Eyebrow className="text-ivory-50/70">Documentation</Eyebrow>
             <h2 id="trust-heading" className="mt-4 text-[1.9rem] leading-tight text-ivory-50 sm:text-[2.5rem]">
               Built for buyers who check the paperwork.
             </h2>

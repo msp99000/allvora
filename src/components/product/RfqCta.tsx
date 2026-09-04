@@ -48,7 +48,7 @@ export function RfqCta({
               <Link href="/contact">Contact us</Link>
             </Button>
           </div>
-          <p className="eyebrow mt-6 text-ivory-50/55">
+          <p className="eyebrow mt-6 text-ivory-50/70">
             Response {site.responseWindow} · COA with every shipment
           </p>
         </div>

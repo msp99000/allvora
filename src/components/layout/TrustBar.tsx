@@ -50,8 +50,8 @@ export function TrustBar({
         {hasUnconfirmed ? (
           <p
             className={cn(
-              "eyebrow mt-2 text-center text-[0.5625rem] opacity-70",
-              onDark ? "text-ivory-50/70" : "text-ink-500"
+              "eyebrow mt-2 text-center text-[0.5625rem]",
+              onDark ? "text-ivory-50/75" : "text-ink-600"
             )}
           >
             * Registrations pending confirmation before launch

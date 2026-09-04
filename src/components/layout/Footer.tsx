@@ -32,7 +32,7 @@ export function Footer() {
               {site.tagline}
             </p>
             <div className="mt-8">
-              <Eyebrow className="mb-3 text-ivory-50/55">Contact</Eyebrow>
+              <Eyebrow className="mb-3 text-ivory-50/70">Contact</Eyebrow>
               <ul className="space-y-1.5 text-[0.9375rem]">
                 <li>
                   <a
@@ -67,7 +67,7 @@ export function Footer() {
           <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => (
               <div key={category.slug}>
-                <Eyebrow className="mb-3 text-ivory-50/55">
+                <Eyebrow className="mb-3 text-ivory-50/70">
                   <Link href={`/products/${category.slug}`} className="hover:text-gold-300">
                     {category.name}
                   </Link>
@@ -90,7 +90,7 @@ export function Footer() {
             ))}
 
             <div>
-              <Eyebrow className="mb-3 text-ivory-50/55">
+              <Eyebrow className="mb-3 text-ivory-50/70">
                 <Link href="/markets" className="hover:text-gold-300">
                   Markets
                 </Link>
@@ -110,7 +110,7 @@ export function Footer() {
             </div>
 
             <div>
-              <Eyebrow className="mb-3 text-ivory-50/55">Company</Eyebrow>
+              <Eyebrow className="mb-3 text-ivory-50/70">Company</Eyebrow>
               <ul className="space-y-1.5">
                 {companyLinks.map((link) => (
                   <li key={link.href}>
@@ -130,10 +130,10 @@ export function Footer() {
         <div className="mt-14 border-t border-rule-invert pt-8">
           <CertBadgeRow onDark className="mb-8" />
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="eyebrow text-ivory-50/50">
+            <p className="eyebrow text-ivory-50/70">
               © {year} {site.legalName}. India.
             </p>
-            <p className="eyebrow text-ivory-50/50">
+            <p className="eyebrow text-ivory-50/70">
               Export and sourcing · No prices published · Quote on specification
             </p>
           </div>

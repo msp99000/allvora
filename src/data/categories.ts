@@ -60,7 +60,7 @@ export const categories: Category[] = [
       "Indian Basmati rice across nine varieties and four processing types, and ghee from standard cow and buffalo grades to A2, bilona, cultured, organic and industrial formats, in retail and bulk.",
     seoTitle: "Basmati Rice & Ghee Supplier from India",
     seoDescription:
-      "Indian food products supplier: Basmati rice across nine varieties in Raw, Steam, Sella and Golden Sella, and ghee from standard cow grades to A2 and bilona, retail and bulk.",
+      "Indian food supplier: Basmati rice in nine varieties across Raw, Steam, Sella and Golden Sella, plus ghee from standard cow grades to A2, bilona and organic.",
   },
   {
     slug: "tea-coffee",

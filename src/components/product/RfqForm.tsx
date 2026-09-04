@@ -1,8 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { Button } from "@/components/ui/button";
@@ -11,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { site } from "@/data/site";
+import type { RfqPrefill } from "@/lib/rfq-prefill";
 import { INCOTERMS, REFERRAL_SOURCES, rfqSchema, type RfqInput } from "@/lib/rfq-schema";
 
 type Status =
@@ -35,51 +35,22 @@ function FieldError({ id, message }: { id: string; message?: string }) {
  * a variety added to the data appears here with no change to this file. The
  * ?category=&product=&variety= params written by RfqCta prefill them.
  */
-interface Prefill {
-  category: string;
-  product: string;
-  variety: string;
-}
-
 /**
- * Resolves ?category=&product=&variety= (written by RfqCta) into starting
- * values, and remounts the form when those params change so the values are
- * always applied through defaultValues on a first render.
+ * The RFQ form. Section 5.6.
  *
- * Pushing the values in from an effect instead does not work: setting the
- * product before its category has re-rendered the dependent option list leaves
- * the native select with no matching option, and it silently falls back to the
- * placeholder.
+ * Category, product and variety are dependent selects driven by products.ts, so
+ * a variety added to the data appears here with no change to this file.
+ *
+ * `prefill` is resolved on the server from the ?category=&product=&variety=
+ * params that RfqCta writes, and arrives as props. Reading those params on the
+ * client instead would need a Suspense boundary, and swapping its fallback for
+ * the real form measured a 0.173 layout shift. Passing the values through
+ * defaultValues also avoids a subtler bug: setting the product before its
+ * category has re-rendered the dependent option list leaves the native select
+ * with no matching option, and it silently falls back to the placeholder.
  */
-export function RfqForm() {
-  const searchParams = useSearchParams();
+export function RfqForm({ prefill }: { prefill: RfqPrefill }) {
 
-  const prefill = useMemo<Prefill>(() => {
-    const productParam = searchParams.get("product") ?? "";
-    const match = products.find((p) => p.slug === productParam);
-    const categoryParam = searchParams.get("category") ?? "";
-    // The product is the more specific signal, so its category wins.
-    const category =
-      match?.category ??
-      categories.find((c) => c.slug === categoryParam)?.slug ??
-      "";
-    const varietyParam = searchParams.get("variety") ?? "";
-    const variety =
-      match && match.varieties.some((v) => v.slug === varietyParam)
-        ? varietyParam
-        : "";
-    return { category, product: match?.slug ?? "", variety };
-  }, [searchParams]);
-
-  return (
-    <RfqFormFields
-      key={`${prefill.category}|${prefill.product}|${prefill.variety}`}
-      prefill={prefill}
-    />
-  );
-}
-
-function RfqFormFields({ prefill }: { prefill: Prefill }) {
   const [status, setStatus] = useState<Status>({ kind: "idle" });
 
   const {
@@ -258,6 +229,7 @@ function RfqFormFields({ prefill }: { prefill: Prefill }) {
               </Label>
               <NativeSelect
                 id="category"
+                defaultValue={prefill.category}
                 aria-invalid={Boolean(errors.category)}
                 aria-describedby={errors.category ? "category-error" : undefined}
                 {...register("category", {
@@ -284,6 +256,7 @@ function RfqFormFields({ prefill }: { prefill: Prefill }) {
               <NativeSelect
                 id="product"
                 disabled={!selectedCategory}
+                defaultValue={prefill.product}
                 aria-invalid={Boolean(errors.product)}
                 aria-describedby={errors.product ? "product-error" : undefined}
                 {...register("product", { onChange: () => setValue("variety", "") })}
@@ -305,6 +278,7 @@ function RfqFormFields({ prefill }: { prefill: Prefill }) {
               <NativeSelect
                 id="variety"
                 disabled={!selectedProduct}
+                defaultValue={prefill.variety}
                 {...register("variety")}
               >
                 <option value="">

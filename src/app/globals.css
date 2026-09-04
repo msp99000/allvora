@@ -11,7 +11,11 @@
      ink-500 / ivory-50       5.29   spec labels, captions
      peacock-600 / ivory-50   5.92   links
      gold-500 / ivory-50      2.74   FAILS. Fills and rules only, never text.
-     gold-700 / ivory-50      4.80   the text gold
+     gold-700 / ivory-50      5.53   the text gold
+     gold-700 / stamp wash    4.87   the gold stamp sits on its own gold wash,
+                                     which is lighter than ivory, so the text
+                                     gold is set against that, not against the
+                                     page ground
      ink-900 / gold-500       5.84   the gold CTA
      ivory-50 / peacock-900  11.56   the teal bands
      gold-300 / peacock-900   6.36   gold text on teal
@@ -27,7 +31,7 @@
   /* gold-500 is a fill and rule colour. Use gold-700 for text on ivory and
      gold-300 for text on peacock. */
   --color-gold-500: #c98a2b;
-  --color-gold-700: #96630f;
+  --color-gold-700: #8a5a0d;
   --color-gold-300: #e3b25e;
   --color-gold-100: #f2e3c7;
 
@@ -402,11 +406,26 @@
   .reveal-3 { animation-delay: 220ms; }
   .reveal-4 { animation-delay: 300ms; }
 
-  /* Scroll-triggered fade for section headings, CSS only, no observer JS. */
+  /* Scroll-triggered reveal for section headings, CSS only, no observer JS.
+     Deliberately animates transform and NOT opacity: a scroll-driven opacity
+     fade leaves text part-transparent whenever the timeline is mid-range, which
+     measured 3.25:1 against ivory and fails the AA floor in Section 3.4. It
+     also renders text invisible outright on a page too short to scroll, where a
+     view() timeline never advances. The hero keeps its full fade because that
+     one is time-based and always completes. */
+  @keyframes allvora-rise-only {
+    from {
+      transform: translateY(8px);
+    }
+    to {
+      transform: none;
+    }
+  }
+
   .reveal-on-scroll {
-    animation: allvora-rise 500ms var(--ease-reveal) both;
+    animation: allvora-rise-only 500ms var(--ease-reveal) both;
     animation-timeline: view();
-    animation-range: entry 0% cover 22%;
+    animation-range: entry 0% entry 100%;
   }
 
   .lift {

@@ -15,7 +15,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Sourcing & Traceability",
   description:
-    "How Allvora Resources sources from India: named producing regions, written specification confirmation, testing where required, and export documentation assembled per destination.",
+    "How we source from India: named producing regions, written specification confirmation, testing where required, and export documentation per destination.",
   path: "/about/sourcing-and-traceability",
   eyebrow: "SOURCING",
 });

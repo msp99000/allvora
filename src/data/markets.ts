@@ -67,7 +67,7 @@ export const markets: Market[] = [
     ],
     seoTitle: "Indian Spices, Rice & Food Supplier for the Middle East",
     seoDescription:
-      "Supplier of Indian Basmati rice, spices and ghee to Middle East importers, retail chains and distributors, with specifications, labelling and documentation coordinated per order.",
+      "Indian Basmati rice, spices and ghee for Middle East importers, retail chains and distributors, with labelling and documentation coordinated per order.",
   },
   {
     slug: "europe",
@@ -94,7 +94,7 @@ export const markets: Market[] = [
     ],
     seoTitle: "Indian Spice, Moringa, Tea & Coffee Supplier for Europe",
     seoDescription:
-      "Indian exporter supplying European buyers with spices, moringa, tea and coffee against agreed MRL, aflatoxin and microbiological limits, with testing and documentation per shipment.",
+      "Indian spices, moringa, tea and coffee for European buyers, supplied against agreed MRL, aflatoxin and microbiological limits, with testing per shipment.",
   },
   {
     slug: "north-america",
@@ -121,7 +121,7 @@ export const markets: Market[] = [
     ],
     seoTitle: "Indian Spices, Basmati & Coconut Supplier for North America",
     seoDescription:
-      "Indian exporter supplying North American buyers with spices, Basmati rice, coconut products and cocopeat, with labelling, testing and lot documentation coordinated per shipment.",
+      "Indian spices, Basmati rice, coconut products and cocopeat for North American buyers, with labelling, testing and lot documentation coordinated per shipment.",
   },
   {
     slug: "africa",
@@ -146,7 +146,7 @@ export const markets: Market[] = [
     ],
     seoTitle: "Indian Rice, Spices & Food Products Supplier for Africa",
     seoDescription:
-      "Indian exporter supplying African importers and wholesalers with rice, spices and food products in commercial grades and bulk formats, with destination documentation coordinated.",
+      "Indian rice, spices and food products for African importers and wholesalers, in commercial grades and bulk formats, with destination documentation arranged.",
   },
   {
     slug: "southeast-asia",
@@ -171,7 +171,7 @@ export const markets: Market[] = [
     ],
     seoTitle: "Indian Spices, Coconut & Coffee Supplier for Southeast Asia",
     seoDescription:
-      "Indian exporter supplying Southeast Asian manufacturers and ingredient traders with spices, coconut products and coffee against technical and microbiological specifications.",
+      "Indian spices, coconut products and coffee for Southeast Asian manufacturers and ingredient traders, against technical and microbiological specifications.",
   },
   {
     slug: "south-asia",
@@ -196,7 +196,7 @@ export const markets: Market[] = [
     ],
     seoTitle: "Indian Spices, Tea & Food Products Supplier for South Asia",
     seoDescription:
-      "Indian exporter supplying South Asian importers and blenders with spices, tea and food products, with crop year, grade and documentation confirmed before each order.",
+      "Indian spices, tea and food products for South Asian importers and blenders, with crop year, grade and documentation confirmed before each order is placed.",
   },
   {
     slug: "australia-nz",
@@ -221,7 +221,7 @@ export const markets: Market[] = [
     ],
     seoTitle: "Indian Spices, Rice & Natural Products for Australia and NZ",
     seoDescription:
-      "Indian exporter supplying Australian and New Zealand buyers with spices, Basmati rice, moringa and coconut products, with biosecurity treatment and certificates arranged.",
+      "Indian spices, Basmati rice, moringa and coconut products for Australian and New Zealand buyers, with biosecurity treatment and certificates arranged.",
   },
 ];
 
