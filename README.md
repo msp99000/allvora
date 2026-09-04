@@ -51,8 +51,8 @@ Create `.env.local` for development and set the same keys in the Vercel project.
 # RFQ email delivery. Without all three, /api/rfq logs the enquiry to the
 # server console and still returns success, so the form is testable locally.
 RESEND_API_KEY=re_xxxxxxxxxxxx
-RFQ_TO_EMAIL=sales@allvora.com        # where enquiries land
-RFQ_FROM_EMAIL=website@allvora.com    # must be a domain verified in Resend
+RFQ_TO_EMAIL=sales@allvoraresources.com    # where enquiries land
+RFQ_FROM_EMAIL=website@allvoraresources.com # must be on a domain verified in Resend
 
 # Optional. Set to false to hide certifications that are not yet confirmed
 # instead of showing them with a "pending" marker.

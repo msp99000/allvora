@@ -62,7 +62,7 @@ the real brand asset. Replace both with the supplied artwork.
 
 ### 1.4 Production domain
 
-`site.url` in `src/data/site.ts` is set to `https://www.allvora.com`. It drives
+`site.url` in `src/data/site.ts` is set to `https://www.allvoraresources.com`. It drives
 every canonical URL, the sitemap, and OG image URLs. Confirm it before the first
 crawl.
 

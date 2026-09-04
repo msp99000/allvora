@@ -50,9 +50,7 @@ export const metadata: Metadata = {
   creator: site.legalName,
   publisher: site.legalName,
   formatDetection: { telephone: false, address: false, email: false },
-  icons: {
-    icon: [{ url: "/brand/allvora-mark.svg", type: "image/svg+xml" }],
-  },
+  // The favicon comes from src/app/icon.svg by file convention.
 };
 
 export const viewport: Viewport = {

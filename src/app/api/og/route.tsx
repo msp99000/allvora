@@ -11,6 +11,13 @@
 
 import { ImageResponse } from "next/og";
 
+import {
+  FEATHER_GOLD,
+  FEATHER_MIRROR,
+  FEATHER_PATH,
+  FEATHER_TRANSFORM,
+} from "@/lib/brand-mark";
+
 export const runtime = "nodejs";
 
 const PEACOCK = "#0E3B36";
@@ -90,12 +97,15 @@ export function GET(request: Request) {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-            <svg width="46" height="46" viewBox="0 0 64 64">
-              <circle cx="32" cy="32" r="23" fill="none" stroke={IVORY} strokeWidth="1.8" />
-              <ellipse cx="32" cy="32" rx="10" ry="23" fill="none" stroke={IVORY} strokeWidth="1.1" opacity="0.5" />
-              <path d="M9.5 25.5h45M9.5 38.5h45" stroke={IVORY} strokeWidth="1.1" opacity="0.5" />
-              <path d="M8 56C16 36 28 22 46 14" stroke={GOLD_SOFT} strokeWidth="2" fill="none" />
-              <circle cx="44" cy="20" r="8.5" fill={PEACOCK} stroke={GOLD} strokeWidth="2.2" />
+            {/* The real feather mark. Satori cannot follow a <use> into <defs>,
+                so the mirrored half is emitted as its own path. */}
+            <svg width="52" height="52" viewBox="0 0 512 512" fill={FEATHER_GOLD}>
+              <g transform={FEATHER_TRANSFORM}>
+                <path d={FEATHER_PATH} />
+              </g>
+              <g transform={`${FEATHER_MIRROR} ${FEATHER_TRANSFORM}`}>
+                <path d={FEATHER_PATH} />
+              </g>
             </svg>
             <div style={{ fontSize: 30 }}>Allvora Resources</div>
           </div>

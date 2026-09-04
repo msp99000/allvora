@@ -8,10 +8,12 @@
  *   npm run audit:seo -- http://localhost:4311
  */
 
+import { site } from "../src/data/site";
 import { builtRoutes } from "../src/lib/routes";
 
 const base = (process.argv[2] ?? "http://localhost:4311").replace(/\/$/, "");
-const PROD_ORIGIN = "https://www.allvora.com";
+/** Read from the site config so changing the domain cannot leave this stale. */
+const PROD_ORIGIN = site.url;
 
 interface Problem {
   route: string;

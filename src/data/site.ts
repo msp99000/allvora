@@ -49,7 +49,7 @@ export const site: SiteConfig = {
   tagline: "Indian Products. Global Reach. Reliable Sourcing.",
   description:
     "Allvora Resources is an India-based export and sourcing company supplying spices, rice, ghee, tea, coffee and natural products to international buyers, to specification and with documentation.",
-  url: "https://www.allvora.com",
+  url: "https://www.allvoraresources.com",
   locale: "en",
   email: {
     label: EMAIL,

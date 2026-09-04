@@ -119,7 +119,7 @@ export function organizationJsonLd(): JsonLdObject {
     slogan: site.tagline,
     logo: {
       "@type": "ImageObject",
-      url: absoluteUrl("/brand/allvora-mark.svg"),
+      url: absoluteUrl("/brand/allvora-logo.svg"),
     },
     contactPoint: [contactPoint],
   };
