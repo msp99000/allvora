@@ -80,7 +80,6 @@ export async function POST(request: Request) {
     .join("\n");
 
   if (!KEY || !TO || !FROM) {
-    // eslint-disable-next-line no-console
     console.info(`[rfq] ${subject}\n${body}\n[rfq] RESEND_API_KEY not set, not sent.`);
     return NextResponse.json({ ok: true, delivered: false });
   }
@@ -95,8 +94,7 @@ export async function POST(request: Request) {
       text: body,
     });
     if (error) {
-      // eslint-disable-next-line no-console
-      console.error("[rfq] Resend error", error);
+        console.error("[rfq] Resend error", error);
       return NextResponse.json(
         { error: "We could not send that just now. Please email us directly." },
         { status: 502 }
@@ -104,7 +102,6 @@ export async function POST(request: Request) {
     }
     return NextResponse.json({ ok: true, delivered: true });
   } catch (cause) {
-    // eslint-disable-next-line no-console
     console.error("[rfq] send failed", cause);
     return NextResponse.json(
       { error: "We could not send that just now. Please email us directly." },

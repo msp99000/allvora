@@ -12,7 +12,7 @@ import { FaqAccordion } from "@/components/shared/FaqAccordion";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { RuleGrid } from "@/components/shared/RuleGrid";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { categories, getCategory } from "@/data/categories";
+import { getCategory } from "@/data/categories";
 import { productFaqs } from "@/data/faqs";
 import { getProduct, launchVarieties, products, productsInCategory } from "@/data/products";
 import { buildMetadata, itemListJsonLd, productCrumbs } from "@/lib/seo";
