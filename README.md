@@ -76,6 +76,7 @@ src/data/
 ├── markets.ts         7 regions
 ├── certifications.ts  registrations and export documents
 ├── sourcing.ts        producing regions and the sourcing process
+├── images.ts          photography slots, alt text and shot briefs
 ├── faqs.ts            general, product and variety questions
 ├── blog.ts            post metadata (bodies are MDX)
 └── site.ts            company identity and contact channels
@@ -149,6 +150,32 @@ and the home page chips.
 
 The map is explicit on purpose: a missing MDX file becomes a build-time type
 error instead of a runtime 404.
+
+### Add a photograph
+
+Every image slot on the site renders a branded placeholder until a real photo
+exists. Adding one is a single line, and nothing shifts because the slot already
+reserves its aspect ratio.
+
+1. Put the file in `public/photography/`, e.g. `public/photography/red-chilli.jpg`.
+2. In `src/data/images.ts`, set `src` on that entry:
+
+```ts
+"red-chilli": {
+  src: "/photography/red-chilli.jpg",   // was null
+  alt: "Whole dried red chillies shown close, with stems and wrinkled skin visible.",
+  brief: "…",
+  tone: "spice",
+},
+```
+
+The alt text and the shot brief are already written for all 15 slots;
+`CONTENT_REVIEW.md` §6 lists what to shoot for each. Category slots render 16:9,
+product and variety slots 4:3.
+
+A variety inherits its product's photograph. To give one its own, add an entry to
+`varietyImages` keyed `"productSlug/varietySlug"` with alt text naming that
+variety.
 
 ### Change contact details
 

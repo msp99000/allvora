@@ -10,10 +10,12 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { Container } from "@/components/shared/Container";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
 import { JsonLd } from "@/components/shared/JsonLd";
+import { Media } from "@/components/shared/Media";
 import { RuleGrid } from "@/components/shared/RuleGrid";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { getCategory } from "@/data/categories";
 import { productFaqs } from "@/data/faqs";
+import { productImage } from "@/data/images";
 import { getProduct, launchVarieties, products, productsInCategory } from "@/data/products";
 import { buildMetadata, itemListJsonLd, productCrumbs } from "@/lib/seo";
 
@@ -55,6 +57,7 @@ export default async function ProductPage({
     (p) => p.slug !== product.slug
   );
   const faqs = productFaqs(product);
+  const image = productImage(product.slug);
   const path = `/products/${category.slug}/${product.slug}`;
 
   return (
@@ -71,13 +74,24 @@ export default async function ProductPage({
       <section className="border-b border-rule">
         <Container className="py-16 sm:py-20">
           <Breadcrumbs crumbs={productCrumbs(category, product)} className="mb-8" />
-          <div className="max-w-3xl">
-            <h1 className="text-[2rem] leading-[1.1] sm:text-[2.7rem] lg:text-[3rem]">
-              {product.name} exporter and supplier from India
-            </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
-              {product.intro}
-            </p>
+          <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-16">
+            <div className="max-w-3xl">
+              <h1 className="text-[2rem] leading-[1.1] sm:text-[2.7rem] lg:text-[3rem]">
+                {product.name} exporter and supplier from India
+              </h1>
+              <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+                {product.intro}
+              </p>
+            </div>
+            {image ? (
+              <Media
+                image={image}
+                ratio="4 / 3"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                priority
+                className="border border-rule"
+              />
+            ) : null}
           </div>
         </Container>
       </section>

@@ -203,10 +203,61 @@ Swapping in Libre Caslon Text is a follow-up if the cards matter enough.
 
 ## 5. Not done
 
-- Real photography. Section 3.3 calls for macro commodity texture shots and
-  documentary sourcing imagery. None exist, so no `next/image` content
-  photography is used anywhere. The pages are built to read well without it, so
-  images can be added without a redesign.
+- Real photography. The image system is built and wired in (see section 6), but
+  every slot is still a placeholder awaiting a photograph.
 - `/about/why-source-from-india/`, industries pages and product-plus-country
   pages. All marked P2 in Section 4.
 - The Phase 2 blog topic bank (7 further posts listed in Section 5.10).
+
+---
+
+## 6. Photography: 15 slots awaiting a photograph
+
+The image system is built. Every slot renders a branded placeholder at the
+correct aspect ratio, with the alt text already written. Supplying a photograph
+is one line: drop the file in `public/photography/` and set `src` on that entry
+in `src/data/images.ts`. No layout changes, and nothing shifts, because the slot
+already reserves the space.
+
+Art direction, from Section 3.3: macro texture shots of the actual commodity,
+consistent warm grade, documentary sourcing imagery. No stock-photo handshakes,
+no globe clip art.
+
+### Category slots (4), shown on the home page and /products/
+
+| Slot | What to shoot |
+|---|---|
+| `spices` | Macro group: whole dried red chilli, black peppercorns, green cardamom pods, broken turmeric fingers. Raked light for skin and wrinkle texture. |
+| `agri-natural` | Macro group: bright green moringa powder, white desiccated coconut, the fibrous brown face of a cocopeat block. The three colours carry the frame. |
+| `food` | Macro of extra-long-grain Basmati filling the frame, grains separated enough to read individual length, ghee in shallow focus behind. |
+| `tea-coffee` | Split macro: dark curled orthodox tea leaf against pale green unroasted Arabica beans, same grade across both halves. |
+
+### Product slots (11), shown on each product page and inherited by its varieties
+
+| Slot | What to shoot |
+|---|---|
+| `red-chilli` | Whole dried chilli filling the frame; skin wrinkle and deep red are the subject. Shoot a stemless variant too. |
+| `black-pepper` | Whole peppercorns; berry size and wrinkled surface, since buyers grade on size and density. |
+| `cardamom` | Green pods; colour and pod size front and centre. A scale reference would suit the grading story. |
+| `turmeric` | Whole dried fingers with a heap of ground powder alongside, so both supplied forms read in one frame. |
+| `moringa` | Powder, where colour is the whole point, with dried whole leaf alongside. Colour accuracy over styling. |
+| `coconut` | Group across the chain: mature nut, copra, fine desiccated, oil in glass. White on a warm ground. |
+| `cocopeat` | Documentary rather than macro: a 5 kg compressed block beside the same material expanded loose, to show compression ratio. |
+| `basmati-rice` | Grains separated enough to read individual length, since length is the parameter buyers specify. |
+| `ghee` | Warm side light on ghee in clear glass, half set and half liquid if possible. |
+| `tea` | Dry leaf so grade reads. Shoot CTC granules and orthodox whole leaf identically for comparison. |
+| `coffee` | Green (unroasted) beans, since Allvora supplies green. Bean size and uniformity are what buyers grade on. |
+
+### Two notes
+
+**Alt text is already written and is deliberately conservative.** It describes
+the photograph, not the variety. A variety page without its own photo inherits
+the product photograph and keeps the product's alt text, because describing a
+Sannam S4 photograph as Teja S17 would be a false statement in the
+accessibility layer. If you shoot per variety, add an entry to `varietyImages`
+in `src/data/images.ts` with alt text naming that variety, which is also what
+Section 7.6 asks for.
+
+**Shoot to a consistent crop.** Category slots render 16:9, product and variety
+slots render 4:3. Supplying images near those ratios avoids awkward cropping,
+though `object-cover` will handle any ratio without breaking the layout.

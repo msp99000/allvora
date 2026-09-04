@@ -11,9 +11,11 @@ import { Container } from "@/components/shared/Container";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
 import { JsonLd } from "@/components/shared/JsonLd";
+import { Media } from "@/components/shared/Media";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { getCategory } from "@/data/categories";
 import { varietyFaqs } from "@/data/faqs";
+import { varietyImage } from "@/data/images";
 import { getVariety, launchVarieties, products } from "@/data/products";
 import { buildMetadata, productJsonLd, varietyCrumbs } from "@/lib/seo";
 import { LAUNCH_P2_VARIETIES } from "@/lib/routes";
@@ -67,6 +69,7 @@ export default async function VarietyPage({
   const path = `/products/${category.slug}/${product.slug}/${variety.slug}`;
   const siblings = launchVarieties(product).filter((v) => v.slug !== variety.slug);
   const faqs = varietyFaqs(product, variety);
+  const image = varietyImage(product.slug, variety.slug);
 
   return (
     <>
@@ -75,14 +78,25 @@ export default async function VarietyPage({
       <section className="border-b border-rule">
         <Container className="py-16 sm:py-20">
           <Breadcrumbs crumbs={varietyCrumbs(category, product, variety)} className="mb-8" />
-          <div className="max-w-3xl">
-            <h1 className="text-[2rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.9rem]">
-              {variety.headingName} exporter and supplier from India
-            </h1>
-            {variety.intro ? (
-              <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
-                {variety.intro}
-              </p>
+          <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-16">
+            <div className="max-w-3xl">
+              <h1 className="text-[2rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.9rem]">
+                {variety.headingName} exporter and supplier from India
+              </h1>
+              {variety.intro ? (
+                <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+                  {variety.intro}
+                </p>
+              ) : null}
+            </div>
+            {image ? (
+              <Media
+                image={image}
+                ratio="4 / 3"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                priority
+                className="border border-rule"
+              />
             ) : null}
           </div>
         </Container>
