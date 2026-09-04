@@ -20,7 +20,7 @@ export function CategoryGrid() {
             >
               <Eyebrow className="mb-4 tabular-nums">
                 {String(index + 1).padStart(2, "0")} · {count}{" "}
-                {count === 1 ? "product line" : "product lines"}
+                {count === 1 ? "product" : "products"}
               </Eyebrow>
               <h3 className="text-[1.4rem] leading-tight transition-colors group-hover:text-peacock-600">
                 {category.name}

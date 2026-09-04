@@ -193,6 +193,12 @@
   }
 
   /* Specification values read as data, not as prose. */
+  /* Row header that should wrap rather than run wide, for tables whose first
+     column is a phrase rather than a variety name. */
+  .ledger tbody th.ledger-wrap {
+    white-space: normal;
+  }
+
   /* Row label in the single-variety SpecList: wraps, and reads as a field
      label rather than as a variety name. */
   .ledger tbody th.ledger-label {
@@ -269,11 +275,12 @@
 
   @media (max-width: 767px) {
     .ledger-scroll {
+      /* Fade the right edge only. A left fade would dim the first column at
+         scroll-start, where there is nothing hidden to the left. */
       mask-image: linear-gradient(
         to right,
-        transparent 0,
-        #000 14px,
-        #000 calc(100% - 26px),
+        #000 0,
+        #000 calc(100% - 28px),
         transparent 100%
       );
     }

@@ -51,12 +51,12 @@ export function FeatherArcUnderlay({ className }: { className?: string }) {
               120 - i * 10
             } ${660 - i * 6} ${86 + i * 30}`}
             strokeWidth={i % 2 === 0 ? 1 : 0.7}
-            strokeOpacity={0.3 - i * 0.028}
+            strokeOpacity={0.42 - i * 0.036}
           />
         ))}
       </g>
-      <circle cx="596" cy="150" r="74" stroke="var(--color-gold-500)" strokeOpacity="0.34" strokeWidth="1.2" />
-      <circle cx="596" cy="150" r="52" stroke="var(--color-gold-500)" strokeOpacity="0.2" strokeWidth="1" />
+      <circle cx="596" cy="150" r="74" stroke="var(--color-gold-500)" strokeOpacity="0.45" strokeWidth="1.2" />
+      <circle cx="596" cy="150" r="52" stroke="var(--color-gold-500)" strokeOpacity="0.28" strokeWidth="1" />
       <circle cx="596" cy="150" r="19" fill="var(--color-cobalt-700)" fillOpacity="0.1" />
     </svg>
   );
