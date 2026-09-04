@@ -35,6 +35,13 @@ function isPlaceholder(value: string | undefined): boolean {
 
 interface PageMetaInput {
   title: string;
+  /**
+   * Overrides the tab title outright, bypassing the "%s | Allvora Resources"
+   * template. Used by the home page so the browser tab leads with the company
+   * name rather than with a category description, which is all a narrow tab
+   * has room to show.
+   */
+  absoluteTitle?: string;
   description: string;
   path: string;
   /** Mono eyebrow, rendered on the OG card above the title. */
@@ -50,6 +57,7 @@ interface PageMetaInput {
  */
 export function buildMetadata({
   title,
+  absoluteTitle,
   description,
   path,
   eyebrow,
@@ -61,12 +69,12 @@ export function buildMetadata({
   const ogImage = ogImageUrl(title, eyebrow);
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: absoluteTitle } : title,
     description,
     alternates: { canonical: url },
     ...(noindex ? { robots: { index: false, follow: false } } : {}),
     openGraph: {
-      title: `${title} | ${BRAND}`,
+      title: absoluteTitle ?? `${title} | ${BRAND}`,
       description,
       url,
       siteName: BRAND,
@@ -77,7 +85,7 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${BRAND}`,
+      title: absoluteTitle ?? `${title} | ${BRAND}`,
       description,
       images: [ogImage],
     },

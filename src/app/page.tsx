@@ -14,10 +14,15 @@ import { MarketChips } from "@/components/shared/MarketChips";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { marketsStripLine } from "@/data/markets";
+import { site } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Indian Agricultural & Spice Exporter",
+  // The tab is the site's front door, so it leads with the company name. Inner
+  // pages keep "<page> | Allvora Resources", which is what a search result
+  // wants and what tells two open tabs apart.
+  absoluteTitle: `${site.name}: Indian Agricultural & Spice Exporter`,
   description:
     "Indian exporter of spices, Basmati rice, ghee, tea, coffee and natural products, sourced to your specification and shipped with full export documentation.",
   path: "/",
