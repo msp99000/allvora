@@ -107,7 +107,6 @@ export default async function VarietyPage({
           <div className="grid gap-12 lg:grid-cols-[1.35fr_1fr] lg:gap-16">
             <div>
               <SectionHeading
-                eyebrow="Specification ledger"
                 title={<span id="spec-heading">Specification summary.</span>}
                 className="mb-8"
               />
@@ -144,7 +143,6 @@ export default async function VarietyPage({
         <section aria-labelledby="forms-heading" className="border-y border-rule bg-ivory-100/50">
           <Container className="py-20 sm:py-24">
             <SectionHeading
-              eyebrow="Processing forms"
               title={<span id="forms-heading">Choosing a processing form.</span>}
               intro="The variety sets the grain. The processing form sets how it cooks and how it looks on the shelf."
               className="mb-12"
@@ -170,7 +168,6 @@ export default async function VarietyPage({
         <section aria-labelledby="related-heading">
           <Container className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="Related varieties"
               title={<span id="related-heading">Other {product.name.toLowerCase()} grades.</span>}
               className="mb-8"
             />

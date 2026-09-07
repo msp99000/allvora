@@ -109,7 +109,6 @@ export default function AboutPage() {
       <section aria-labelledby="who-we-serve" className="border-y border-rule bg-ivory-100/50">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="Who we serve"
             title={<span id="who-we-serve">Professional buyers, not consumers.</span>}
             className="mb-10"
           />

@@ -170,7 +170,7 @@
   }
 
   .ledger tbody td {
-    padding: 0.9rem 1rem 0.9rem 0;
+    padding: 1.05rem 1.25rem 1.05rem 0;
     border-bottom: 1px solid var(--color-rule);
     vertical-align: top;
     color: var(--color-ink-600);
@@ -181,12 +181,12 @@
   }
 
   .ledger tbody th[scope="row"] {
-    padding: 0.9rem 1rem 0.9rem 0;
+    padding: 1.05rem 1.25rem 1.05rem 0;
     border-bottom: 1px solid var(--color-rule);
     vertical-align: top;
     text-align: left;
     font-family: var(--font-display);
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     font-weight: 400;
     color: var(--color-peacock-900);
     white-space: nowrap;
@@ -215,10 +215,17 @@
     width: 13rem;
   }
 
+  /* Specification values.
+     These sit in the body sans with tabular figures rather than in mono: mono
+     at data size reads as plain typewriter output, while the export-document
+     character is already carried by the column labels, the grade stamps and the
+     hairline rules. Tabular figures keep numeric parameters aligned down the
+     column, which is the part that matters when a buyer compares grades. */
   .ledger-spec {
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    line-height: 1.7;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.65;
+    letter-spacing: 0.004em;
     color: var(--color-ink-600);
     font-variant-numeric: tabular-nums;
   }
@@ -272,9 +279,15 @@
 
   /* Horizontal scroll with an edge fade, so a 4-column ledger is never
      squashed below 640px. Section 6. */
-  .ledger-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  /* Scoped to narrow screens deliberately. overflow-x also establishes a
+     vertical scroll container, which re-anchored the sticky header row to this
+     box and printed it on top of the first data row. The table only needs to
+     scroll where it is too wide, so the container exists only there. */
+  @media (max-width: 767px) {
+    .ledger-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
   @media (max-width: 767px) {

@@ -51,8 +51,8 @@ export const categories: Category[] = [
   },
   {
     slug: "food",
-    name: "Food Products",
-    shortName: "Food",
+    name: "Grains & Dairy",
+    shortName: "Grains & Dairy",
     cardLine:
       "Basmati rice across nine varieties, and ghee from standard to A2 bilona.",
     h1: "Basmati rice and ghee supplier from India",

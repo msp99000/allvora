@@ -100,7 +100,6 @@ export default async function ProductPage({
       <section aria-labelledby="ledger-heading">
         <Container className="py-16 sm:py-20">
           <SectionHeading
-            eyebrow="Specification ledger"
             title={
               <span id="ledger-heading">
                 {product.varieties.length} {product.name.toLowerCase()} varieties and
@@ -118,7 +117,6 @@ export default async function ProductPage({
         <section aria-labelledby="varieties-heading" className="border-y border-rule bg-ivory-100/50">
           <Container className="py-20 sm:py-24">
             <SectionHeading
-              eyebrow="Varieties"
               title={<span id="varieties-heading">Specifications by variety.</span>}
               intro="Each variety page carries its full specification list, available forms and the documentation supplied with a shipment."
               className="mb-12"

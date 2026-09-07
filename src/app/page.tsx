@@ -80,7 +80,6 @@ export default function HomePage() {
       <section aria-labelledby="products-heading">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="What we supply"
             title={<span id="products-heading">Four product lines, one sourcing standard.</span>}
             intro="Every product can be supplied to buyer-specific specifications with supporting documentation."
             className="mb-12"
@@ -93,7 +92,6 @@ export default function HomePage() {
       <section aria-labelledby="process-heading" className="border-y border-rule bg-ivory-100/50">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="How we work"
             title={<span id="process-heading">Three steps, in this order.</span>}
             className="mb-14"
           />
@@ -143,7 +141,6 @@ export default function HomePage() {
           <FeatherArcDivider className="mb-14" />
           <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
             <SectionHeading
-              eyebrow="Markets"
               title={<span id="markets-heading">Positioned to serve buyers worldwide.</span>}
             />
             <div>

@@ -1,16 +1,13 @@
-import { certifications } from "@/data/certifications";
+import { certifications, visibleCertifications } from "@/data/certifications";
 import { cn } from "@/lib/utils";
 
 /**
  * Certification badge row.
  *
- * Section 5.4 forbids displaying an unconfirmed certification. Every entry is
- * currently `confirmed: false`, so in development the row carries a visible
- * "pending confirmation" marker. Set NEXT_PUBLIC_SHOW_UNCONFIRMED_CERTS=false
- * (or confirm the entries in certifications.ts) and unconfirmed items stop
- * rendering entirely.
+ * Section 5.4 forbids displaying an unconfirmed certification. Visibility is
+ * decided once, in certifications.ts: confirmed entries only in production,
+ * everything with a pending marker in development.
  */
-const SHOW_UNCONFIRMED = process.env.NEXT_PUBLIC_SHOW_UNCONFIRMED_CERTS !== "false";
 
 export function CertBadgeRow({
   className,
@@ -19,7 +16,7 @@ export function CertBadgeRow({
   className?: string;
   onDark?: boolean;
 }) {
-  const shown = certifications.filter((c) => c.confirmed || SHOW_UNCONFIRMED);
+  const shown = visibleCertifications;
   if (shown.length === 0) return null;
 
   return (

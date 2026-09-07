@@ -17,7 +17,8 @@ export function TrustBar({
   className?: string;
   variant?: "top" | "prefooter";
 }) {
-  const hasUnconfirmed = certifications.some((c) => !c.confirmed);
+  const unconfirmedCount = certifications.filter((c) => !c.confirmed).length;
+  const hasUnconfirmed = unconfirmedCount > 0;
   const onDark = variant === "prefooter";
 
   return (
@@ -47,14 +48,15 @@ export function TrustBar({
             </li>
           ))}
         </ul>
-        {hasUnconfirmed ? (
+        {hasUnconfirmed && process.env.NODE_ENV !== "production" ? (
           <p
             className={cn(
               "eyebrow mt-2 text-center text-[0.5625rem]",
               onDark ? "text-ivory-50/75" : "text-ink-600"
             )}
           >
-            * Registrations pending confirmation before launch
+            Dev note: {unconfirmedCount} registration
+            {unconfirmedCount === 1 ? "" : "s"} unconfirmed, hidden from the live strip
           </p>
         ) : null}
       </Container>

@@ -62,16 +62,47 @@ export const certifications: Certification[] = [
 ];
 
 /**
- * The dot-separated TrustBar strip. The last two items are service commitments
- * rather than registrations, so they are not certification records.
+ * Service commitments. Every one of these is a promise Allvora makes in the
+ * approved copy, so they can be shown without any further verification.
  */
-export const trustBarItems: string[] = [
-  ...certifications.slice(0, 3).map((c) => c.short),
+const serviceCommitments: string[] = [
   "COA With Every Shipment",
+  "Specifications Confirmed Before Shipment",
   "Quote Within 24 Hours",
 ];
 
+/**
+ * The dot-separated TrustBar strip.
+ *
+ * Only CONFIRMED registrations appear here. An unconfirmed registration is an
+ * unverified claim, and the site is live: showing "APEDA Registered" before the
+ * document exists asserts something to a buyer that may not be true, and
+ * showing it with a "pending confirmation" footnote publishes an internal note
+ * to customers. Neither is acceptable on a production site, so both are gone
+ * and the strip stands on commitments that are already true.
+ *
+ * Flip `confirmed: true` on a certification above and it rejoins the strip.
+ */
+export const trustBarItems: string[] = [
+  ...certifications.filter((c) => c.confirmed).map((c) => c.short),
+  ...serviceCommitments,
+];
+
 export const unconfirmedCertifications = certifications.filter((c) => !c.confirmed);
+
+/**
+ * What may actually be shown to a visitor.
+ *
+ * One rule, in one place, for every surface that renders a registration: the
+ * TrustBar, the footer badge row and the quality page. In production only
+ * confirmed registrations render, because an unconfirmed one is an unverified
+ * claim being made to a buyer. In development they all render, carrying a
+ * pending marker, so the team keeps seeing what still needs a document.
+ */
+export const visibleCertifications: Certification[] =
+  process.env.NODE_ENV === "production"
+    ? certifications.filter((c) => c.confirmed)
+    : certifications;
 
 /** Export documents Allvora coordinates, shown as a Specification Ledger block. */
 export interface ExportDocument {

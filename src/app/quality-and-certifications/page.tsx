@@ -7,7 +7,7 @@ import { Container } from "@/components/shared/Container";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { certifications, exportDocuments } from "@/data/certifications";
+import { certifications, exportDocuments, visibleCertifications } from "@/data/certifications";
 import { generalFaqs } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
 
@@ -36,6 +36,7 @@ const parameters = [
 ];
 
 export default function QualityPage() {
+  const shown = visibleCertifications;
   const hasUnconfirmed = certifications.some((c) => !c.confirmed);
 
   return (
@@ -69,7 +70,6 @@ export default function QualityPage() {
       <section aria-labelledby="parameters-heading">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="Specification"
             title={<span id="parameters-heading">What you can specify.</span>}
             className="mb-10"
           />
@@ -93,7 +93,6 @@ export default function QualityPage() {
       >
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="Documentation"
             title={<span id="documentation-heading">What travels with the shipment.</span>}
             intro="Where applicable, products are supported by the following documentation, coordinated per product and per destination."
             className="mb-12"
@@ -133,12 +132,11 @@ export default function QualityPage() {
       <section aria-labelledby="registrations-heading">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="Registrations"
             title={<span id="registrations-heading">Registrations and certifications.</span>}
             className="mb-10"
           />
           <ul className="grid max-w-4xl border-l border-t border-rule sm:grid-cols-2 [&>li]:border-b [&>li]:border-r [&>li]:border-rule">
-            {certifications.map((cert) => (
+            {shown.map((cert) => (
               <li key={cert.id} className="p-6 sm:p-7">
                 <div className="mb-3 flex items-start justify-between gap-3">
                   <h3 className="text-[1.1rem] leading-snug">{cert.name}</h3>
@@ -155,11 +153,11 @@ export default function QualityPage() {
               </li>
             ))}
           </ul>
-          {hasUnconfirmed ? (
+          {hasUnconfirmed && process.env.NODE_ENV !== "production" ? (
             <p className="mt-6 max-w-2xl text-[0.875rem] leading-relaxed text-ink-500">
-              Registrations marked pending are being confirmed with the issuing
-              authority and are not yet presented as held. They are listed in
-              CONTENT_REVIEW.md and must be verified before launch.
+              Dev note: registrations marked pending are hidden from the
+              production build entirely. They are listed in CONTENT_REVIEW.md
+              and need a document before they can be shown to buyers.
             </p>
           ) : null}
         </Container>

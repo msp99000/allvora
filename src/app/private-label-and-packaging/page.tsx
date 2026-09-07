@@ -105,7 +105,6 @@ export default function PrivateLabelPage() {
       <section aria-labelledby="formats-heading">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="Formats"
             title={<span id="formats-heading">Three ways product leaves the factory.</span>}
             className="mb-12"
           />

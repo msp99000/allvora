@@ -40,18 +40,27 @@ to deploy with placeholders visible, but it should not be announced.
 - Importer Exporter Code (IEC)
 - Spices Board of India registration
 
-Section 5.4 of the brief forbids displaying an unconfirmed certification. While
-`confirmed` is false, each is shown with a dashed border and an asterisk, the
-trust bar carries the line "Registrations pending confirmation before launch",
-and the quality page marks each one "Pending".
+Section 5.4 of the brief forbids displaying an unconfirmed certification.
 
-**Two options before launch.** Either supply the certificate for each and set
-`confirmed: true`, or set `NEXT_PUBLIC_SHOW_UNCONFIRMED_CERTS=false` so
-unconfirmed entries stop rendering entirely.
+**Since the site went live, none of them render in production.** Visibility is
+decided once, by `visibleCertifications` in `src/data/certifications.ts`, and
+every surface reads it: the TrustBar, the footer badge row and the quality page.
+In production only `confirmed: true` entries appear. In development they all
+appear with a pending marker, so the team keeps seeing what is outstanding.
 
-The trust bar text ("APEDA Registered · FSSAI Certified · IEC Licensed · COA
-With Every Shipment · Quote Within 24 Hours") comes from the brief and asserts
-these registrations. It must be confirmed or edited in `certifications.ts`.
+This replaced the earlier behaviour, where the live site both asserted the
+registrations *and* printed "Registrations pending confirmation before launch"
+to visitors. That published an internal note to customers while still making the
+claim, which was the worst of both.
+
+The TrustBar now stands on commitments that are already true:
+"COA With Every Shipment · Specifications Confirmed Before Shipment ·
+Quote Within 24 Hours".
+
+**To restore a registration:** obtain the certificate, then set `confirmed: true`
+on that entry. It rejoins the TrustBar, the footer and the quality page
+automatically. The brief's original TrustBar line asserted APEDA, FSSAI and IEC;
+those three return the moment they are confirmed.
 
 ### 1.3 The logo is a placeholder
 

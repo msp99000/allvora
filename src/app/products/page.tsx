@@ -66,7 +66,6 @@ export default function ProductsHubPage() {
       <section aria-labelledby="all-products-heading" className="border-t border-rule">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="Full catalogue"
             title={<span id="all-products-heading">Every product line, with variety counts.</span>}
             className="mb-12"
           />

@@ -62,7 +62,6 @@ export default function SourcingPage() {
       <section aria-labelledby="regions-heading">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="Sourcing regions"
             title={<span id="regions-heading">Where each product comes from.</span>}
             className="mb-12"
           />
@@ -106,7 +105,6 @@ export default function SourcingPage() {
       <section aria-labelledby="process-heading" className="border-y border-rule bg-ivory-100/50">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="The process"
             title={<span id="process-heading">What happens between your enquiry and the container.</span>}
             className="mb-14"
           />

@@ -39,8 +39,11 @@ export function Logo({
       <span className="flex flex-col leading-none">
         <span
           className={cn(
-            "font-display tracking-[0.01em] transition-all",
-            compact ? "text-[1.05rem]" : "text-[1.15rem] sm:text-[1.3rem]",
+            // Set in caps per brand direction. Caps need looser tracking to stay
+            // legible, and the display face carries it better at a slightly
+            // smaller size.
+            "font-display uppercase tracking-[0.08em] transition-all",
+            compact ? "text-[0.95rem]" : "text-[1.05rem] sm:text-[1.2rem]",
             onDark ? "text-ivory-50" : "text-peacock-900"
           )}
         >

@@ -11,10 +11,11 @@ import { faqJsonLd } from "@/lib/seo";
 export function FaqAccordion({
   faqs,
   title = "Common questions",
-  eyebrow = "FAQ",
+  eyebrow,
 }: {
   faqs: Faq[];
   title?: string;
+  /** Off by default: "FAQ" above "Common questions" only repeated the heading. */
   eyebrow?: string;
 }) {
   if (faqs.length === 0) return null;

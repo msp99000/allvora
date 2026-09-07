@@ -74,7 +74,6 @@ export default async function MarketPage({ params }: PageProps<"/markets/[region
         <Container className="py-16 sm:py-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
             <SectionHeading
-              eyebrow="Buyer profile"
               title={<span id="buyers-heading">Who we supply in {market.nameInSentence}.</span>}
             />
             <Chips items={market.buyerProfile} />
@@ -88,7 +87,6 @@ export default async function MarketPage({ params }: PageProps<"/markets/[region
       >
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="Destination requirements"
             title={<span id="requirements-heading">What we coordinate for this market.</span>}
             className="mb-10"
           />
@@ -112,7 +110,6 @@ export default async function MarketPage({ params }: PageProps<"/markets/[region
       <section aria-labelledby="products-heading">
         <Container className="py-20 sm:py-24">
           <SectionHeading
-            eyebrow="Relevant products"
             title={<span id="products-heading">Product lines for {market.nameInSentence}.</span>}
             className="mb-10"
           />

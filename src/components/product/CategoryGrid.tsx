@@ -37,7 +37,9 @@ export function CategoryGrid() {
                 <p className="mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-ink-600">
                   {category.cardLine}
                 </p>
-                <span className="eyebrow mt-6 inline-flex items-center gap-2 text-gold-700">
+                {/* mt-auto, not mt-6: the card lines are different lengths, so a
+                    fixed margin left these links at different heights across the row. */}
+                <span className="eyebrow mt-auto inline-flex items-center gap-2 pt-6 text-gold-700">
                   View {category.shortName.toLowerCase()}
                   <ArrowRight
                     aria-hidden
