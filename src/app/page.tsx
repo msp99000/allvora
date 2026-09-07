@@ -9,7 +9,6 @@ import { Eyebrow } from "@/components/shared/Eyebrow";
 import {
   FeatherArcDivider,
   FeatherArcOnDark,
-  FeatherArcUnderlay,
 } from "@/components/shared/FeatherArc";
 import { MarketChips } from "@/components/shared/MarketChips";
 import { SectionHeading } from "@/components/shared/SectionHeading";
