@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,33 @@ type Status =
   | { kind: "sending" }
   | { kind: "sent"; email: string }
   | { kind: "failed"; message: string };
+
+/**
+ * Human labels for the error summary, matching the visible field labels.
+ * Keyed by schema field so the summary cannot drift from what the form shows.
+ */
+/** The order fields appear in the form, so the summary matches the page. */
+const FIELD_ORDER = [
+  "name", "company", "country", "email", "phone",
+  "category", "product", "variety",
+  "quantity", "destinationPort", "incoterm", "targetSpecs", "source",
+] as const;
+
+const FIELD_LABELS: Record<string, string> = {
+  name: "Name",
+  company: "Company",
+  country: "Country",
+  email: "Email",
+  phone: "Phone or WhatsApp",
+  category: "Product category",
+  product: "Product",
+  variety: "Variety or grade",
+  quantity: "Quantity and unit",
+  destinationPort: "Destination port",
+  incoterm: "Incoterm",
+  targetSpecs: "Target specifications",
+  source: "How you found us",
+};
 
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
@@ -52,6 +79,7 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 export function RfqForm({ prefill }: { prefill: RfqPrefill }) {
 
   const [status, setStatus] = useState<Status>({ kind: "idle" });
+  const errorSummaryRef = useRef<HTMLDivElement>(null);
 
   const {
     register,
@@ -89,6 +117,13 @@ export function RfqForm({ prefill }: { prefill: RfqPrefill }) {
   const productOptions = products.filter((p) => p.category === selectedCategory);
   const varietyOptions =
     products.find((p) => p.slug === selectedProduct)?.varieties ?? [];
+
+  // The invalid fields, in the order the form presents them, so the summary
+  // reads top to bottom like the form does rather than in object key order.
+  const errorList = FIELD_ORDER.flatMap((field) => {
+    const message = errors[field as keyof typeof errors]?.message;
+    return message ? [{ field, message: String(message) }] : [];
+  });
 
   const onSubmit = handleSubmit(async (values) => {
     setStatus({ kind: "sending" });
@@ -155,6 +190,37 @@ export function RfqForm({ prefill }: { prefill: RfqPrefill }) {
         <label htmlFor="website">Website</label>
         <input id="website" tabIndex={-1} autoComplete="off" {...register("website")} />
       </div>
+
+      {/* Error summary. WCAG 2.2 practice for a form this long: on a failed
+          submit, collect the invalid fields at the top, move focus here so a
+          screen reader announces the failure, and link each item to its field.
+          Inline errors stay exactly where they were. */}
+      {errorList.length > 0 ? (
+        <div
+          ref={errorSummaryRef}
+          tabIndex={-1}
+          role="alert"
+          className="mb-10 border-l-2 border-gold-700 bg-gold-100/25 py-5 pl-5 pr-6 outline-none"
+        >
+          <h2 className="font-display type-card text-peacock-900">
+            {errorList.length === 1
+              ? "One field needs attention before this can be sent"
+              : `${errorList.length} fields need attention before this can be sent`}
+          </h2>
+          <ul className="mt-3 space-y-1.5">
+            {errorList.map(({ field, message }) => (
+              <li key={field} className="text-[0.9375rem] leading-snug">
+                <a
+                  href={`#${field}`}
+                  className="text-gold-700 underline decoration-gold-700/40 underline-offset-4 transition-colors hover:decoration-gold-700"
+                >
+                  {FIELD_LABELS[field] ?? field}: {message}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
 
       <fieldset disabled={sending} className="space-y-10">
         <div>

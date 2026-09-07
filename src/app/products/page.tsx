@@ -43,10 +43,10 @@ export default function ProductsHubPage() {
           />
           <div className="max-w-3xl">
             <Eyebrow>Products</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.9rem] lg:text-[3.2rem]">
+            <h1 className="mt-5 type-title">
               Four product lines, one sourcing standard.
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               Every product below can be supplied to buyer-specific
               specifications with supporting documentation.
             </p>
@@ -75,7 +75,7 @@ export default function ProductsHubPage() {
               return (
                 <div key={category.slug}>
                   <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3 border-b border-rule-strong pb-3">
-                    <h3 className="text-[1.35rem]">
+                    <h3 className="type-card-lg">
                       <Link
                         href={`/products/${category.slug}`}
                         className="transition-colors hover:text-peacock-600"

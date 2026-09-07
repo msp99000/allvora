@@ -80,11 +80,11 @@ export default async function VarietyPage({
           <Breadcrumbs crumbs={varietyCrumbs(category, product, variety)} className="mb-8" />
           <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-16">
             <div className="max-w-3xl">
-              <h1 className="text-[2rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.9rem]">
+              <h1 className="type-title">
                 {variety.headingName} exporter and supplier from India
               </h1>
               {variety.intro ? (
-                <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+                <p className="mt-8 type-lead text-ink-600">
                   {variety.intro}
                 </p>
               ) : null}
@@ -153,7 +153,7 @@ export default async function VarietyPage({
                   key={formNote.form}
                   className="grid gap-3 border-b border-rule py-7 sm:grid-cols-[12rem_1fr] sm:gap-8"
                 >
-                  <h3 className="text-[1.15rem] leading-snug">{formNote.form}</h3>
+                  <h3 className="type-card">{formNote.form}</h3>
                   <p className="max-w-2xl text-[0.9375rem] leading-relaxed text-ink-600">
                     {formNote.note}
                   </p>

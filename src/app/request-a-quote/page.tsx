@@ -48,10 +48,10 @@ export default async function RequestAQuotePage({
             className="mb-8"
           />
           <div className="max-w-3xl">
-            <h1 className="text-[2.1rem] leading-[1.1] sm:text-[2.9rem] lg:text-[3.2rem]">
+            <h1 className="type-title">
               Request a quote.
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               Send your specification and receive a response within 24 hours. The
               more detail you share, the faster we can confirm availability and
               pricing.

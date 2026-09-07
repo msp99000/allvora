@@ -76,10 +76,10 @@ export default async function ProductPage({
           <Breadcrumbs crumbs={productCrumbs(category, product)} className="mb-8" />
           <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-16">
             <div className="max-w-3xl">
-              <h1 className="text-[2rem] leading-[1.1] sm:text-[2.7rem] lg:text-[3rem]">
+              <h1 className="type-title">
                 {product.name} exporter and supplier from India
               </h1>
-              <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+              <p className="mt-8 type-lead text-ink-600">
                 {product.intro}
               </p>
             </div>

@@ -54,10 +54,10 @@ export default function HomePage() {
         <Container className="relative py-20 sm:py-24 lg:py-32">
           <div className="max-w-3xl">
             <Eyebrow className="reveal reveal-1">EXPORT &amp; SOURCING · INDIA</Eyebrow>
-            <h1 className="reveal reveal-2 mt-5 text-[2.25rem] leading-[1.08] sm:text-[3.1rem] lg:text-[3.75rem]">
+            <h1 className="reveal reveal-2 mt-5 type-display">
               Quality products from India, sourced to your specification.
             </h1>
-            <p className="reveal reveal-3 mt-7 max-w-2xl text-[1.0625rem] leading-relaxed text-ink-600 sm:text-[1.15rem]">
+            <p className="reveal reveal-3 mt-7 max-w-2xl type-lead text-ink-600 sm:text-[1.15rem]">
               Allvora Resources connects international buyers with spices, rice,
               ghee, tea, coffee and natural products from India&apos;s producing
               regions. You define the grade, specification, packaging and
@@ -101,7 +101,7 @@ export default function HomePage() {
                 <Eyebrow className="mb-4 tabular-nums text-gold-700">
                   Step {String(index + 1).padStart(2, "0")}
                 </Eyebrow>
-                <h3 className="text-[1.25rem] leading-snug">{step.title}</h3>
+                <h3 className="type-card">{step.title}</h3>
                 <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink-600">
                   {step.body}
                 </p>
@@ -117,10 +117,10 @@ export default function HomePage() {
         <Container className="relative py-20 sm:py-24">
           <div className="max-w-3xl">
             <Eyebrow className="text-ivory-50/70">Documentation</Eyebrow>
-            <h2 id="trust-heading" className="mt-4 text-[1.9rem] leading-tight text-ivory-50 sm:text-[2.5rem]">
+            <h2 id="trust-heading" className="mt-4 type-section text-ivory-50">
               Built for buyers who check the paperwork.
             </h2>
-            <p className="mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-ivory-50/80">
+            <p className="mt-6 max-w-2xl type-lead text-ivory-50/80">
               Every shipment can be supported by a Certificate of Analysis and
               destination-specific export documentation. Specifications are
               confirmed in writing before shipment. India&apos;s agricultural and
@@ -144,7 +144,7 @@ export default function HomePage() {
               title={<span id="markets-heading">Positioned to serve buyers worldwide.</span>}
             />
             <div>
-              <p className="text-[1.0625rem] leading-relaxed text-ink-600">
+              <p className="type-lead text-ink-600">
                 {marketsStripLine}
               </p>
               <MarketChips className="mt-7" />

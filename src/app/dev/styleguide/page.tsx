@@ -67,7 +67,7 @@ export default function StyleguidePage() {
         <FeatherArcUnderlay className="absolute -right-24 -top-16 h-[34rem] w-[34rem] opacity-70" />
         <Container className="relative py-16">
           <Eyebrow>Internal · noindex</Eyebrow>
-          <h1 className="mt-3 text-[2.4rem] leading-[1.1]">Allvora design system</h1>
+          <h1 className="mt-3 type-title">Allvora design system</h1>
           <p className="mt-4 max-w-2xl text-[1.0625rem] text-ink-600">
             Tokens and components for the Allvora Resources site. The signature
             element is the Specification Ledger: mono values, hairline rules, a
@@ -95,13 +95,13 @@ export default function StyleguidePage() {
         <Block title="Typography" note="Libre Caslon Text for headlines, Archivo for body, IBM Plex Mono for specification data and eyebrows.">
           <div className="space-y-6">
             <p className="eyebrow">SPICES / RED CHILLI / TEJA S17</p>
-            <p className="font-display text-[3rem] leading-[1.08] text-peacock-900">
+            <p className="type-display font-display text-peacock-900">
               Quality products from India, sourced to your specification.
             </p>
-            <p className="font-display text-[2rem] leading-tight text-peacock-900">
+            <p className="type-section font-display text-peacock-900">
               Built for buyers who check the paperwork.
             </p>
-            <p className="max-w-2xl text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="max-w-2xl type-lead text-ink-600">
               Body copy in Archivo. Allvora Resources connects international buyers
               with spices, rice, ghee, tea, coffee and natural products from
               India&apos;s producing regions.

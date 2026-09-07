@@ -47,10 +47,10 @@ export default function BlogHubPage() {
           />
           <div className="max-w-3xl">
             <Eyebrow>Guides</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.9rem] lg:text-[3.2rem]">
+            <h1 className="mt-5 type-title">
               Buyer guides to sourcing from India.
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               Grading systems, variety comparisons and the paperwork that comes
               with a container. Written for procurement buyers rather than for
               search engines.
@@ -77,7 +77,7 @@ export default function BlogHubPage() {
                     {post.readingMinutes} min read
                   </Eyebrow>
                   <div>
-                    <h3 className="max-w-2xl text-[1.4rem] leading-tight transition-colors group-hover:text-peacock-600">
+                    <h3 className="max-w-2xl type-card-lg transition-colors group-hover:text-peacock-600">
                       {post.title}
                     </h3>
                     <p className="mt-3 max-w-2xl text-[0.9375rem] leading-relaxed text-ink-600">

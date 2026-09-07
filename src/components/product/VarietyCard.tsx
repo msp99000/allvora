@@ -22,7 +22,7 @@ export function VarietyCard({
   return (
     <article className="lift group relative flex h-full flex-col border border-rule bg-ivory-50 p-6 hover:border-rule-strong">
       <div className="mb-4 flex items-start justify-between gap-4">
-        <h3 className="text-[1.25rem] leading-tight">
+        <h3 className="type-card">
           <Link href={href} className="after:absolute after:inset-0 after:content-['']">
             <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-200 group-hover:bg-[length:100%_1px] group-hover:text-peacock-600 [background-image:linear-gradient(var(--color-gold-500),var(--color-gold-500))]">
               {variety.name}

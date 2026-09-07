@@ -65,10 +65,10 @@ export default function ContactPage() {
           />
           <div className="max-w-3xl">
             <Eyebrow>Contact</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.9rem] lg:text-[3.2rem]">
+            <h1 className="mt-5 type-title">
               Talk to us about your requirement.
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               Tell us the product, the grade and the destination. Every complete
               enquiry is answered {site.responseWindow}.
             </p>
@@ -115,10 +115,10 @@ export default function ContactPage() {
 
           <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
             <div>
-              <h2 className="text-[1.6rem] leading-tight sm:text-[2rem]">
+              <h2 className="type-section">
                 Sending a specification?
               </h2>
-              <p className="mt-4 max-w-md text-[1.0625rem] leading-relaxed text-ink-600">
+              <p className="mt-4 max-w-md type-lead text-ink-600">
                 The quote form captures grade, quantity, packaging, destination
                 port and Incoterm in one pass, which is usually faster than an
                 email thread.

@@ -49,10 +49,10 @@ export default function AboutPage() {
           />
           <div className="max-w-3xl">
             <Eyebrow>The company</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.9rem] lg:text-[3.3rem]">
+            <h1 className="mt-5 type-title">
               Sourcing from India, made reliable.
             </h1>
-            <div className="mt-8 space-y-5 text-[1.0625rem] leading-relaxed text-ink-600">
+            <div className="mt-8 space-y-5 type-lead text-ink-600">
               <p>
                 Allvora Resources is an India-based export and sourcing company
                 focused on supplying quality agricultural, food, natural and
@@ -67,7 +67,7 @@ export default function AboutPage() {
                 products from India&apos;s diverse agricultural regions and
                 connect them with buyers worldwide.
               </p>
-              <p className="font-display text-[1.35rem] leading-snug text-peacock-900">
+              <p className="font-display type-card-lg leading-snug text-peacock-900">
                 Our objective is simple: to make sourcing from India reliable,
                 transparent and efficient.
               </p>
@@ -83,7 +83,7 @@ export default function AboutPage() {
               eyebrow="Why India"
               title={<span id="why-india">A supply base with real depth.</span>}
             />
-            <div className="space-y-5 text-[1.0625rem] leading-relaxed text-ink-600">
+            <div className="space-y-5 type-lead text-ink-600">
               <p>
                 India is one of the world&apos;s major agricultural exporting
                 countries. Its agricultural and processed-food exports reach more
@@ -124,14 +124,14 @@ export default function AboutPage() {
           <div className="grid gap-px border-l border-t border-rule sm:grid-cols-2 [&>div]:border-b [&>div]:border-r [&>div]:border-rule">
             <div className="p-8 sm:p-10">
               <Eyebrow className="mb-4 text-gold-700">Vision</Eyebrow>
-              <p className="font-display text-[1.45rem] leading-snug text-peacock-900">
+              <p className="font-display type-card-lg text-peacock-900">
                 To build Allvora Resources into a trusted global sourcing partner
                 for Indian products.
               </p>
             </div>
             <div className="p-8 sm:p-10">
               <Eyebrow className="mb-4 text-gold-700">Mission</Eyebrow>
-              <p className="font-display text-[1.45rem] leading-snug text-peacock-900">
+              <p className="font-display type-card-lg text-peacock-900">
                 To connect the world with quality products from India.
               </p>
             </div>

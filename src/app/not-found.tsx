@@ -18,10 +18,10 @@ export default function NotFound() {
       <Container className="relative py-24 sm:py-32">
         <div className="max-w-2xl">
           <Eyebrow className="tabular-nums">Error 404</Eyebrow>
-          <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.9rem]">
+          <h1 className="type-title mt-5">
             That page is not in the catalogue.
           </h1>
-          <p className="mt-7 text-[1.0625rem] leading-relaxed text-ink-600">
+          <p className="mt-7 type-lead text-ink-600">
             The link may be out of date, or the variety you are looking for may
             not have its own page yet. Every product line is listed below, and
             the quote form takes a free-text specification if you cannot find

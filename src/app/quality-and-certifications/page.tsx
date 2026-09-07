@@ -52,10 +52,10 @@ export default function QualityPage() {
           />
           <div className="max-w-3xl">
             <Eyebrow>Quality first</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.9rem] lg:text-[3.2rem]">
+            <h1 className="mt-5 type-title">
               International buyers require more than a competitive price.
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               Every product we supply can be sourced according to agreed
               specifications covering grade, size, moisture, purity, colour,
               chemical parameters, microbiological limits, processing

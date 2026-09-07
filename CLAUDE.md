@@ -42,13 +42,34 @@ Fontshare fonts and are not distributable through `next/font/google`, so the
 third listed candidate, Libre Caslon Text, was chosen to keep fonts self-hosted
 with no third-party CDN request.
 
-## Skills gap
+## Design and SEO skills
 
-The brief's Section 0 names four skills: `/frontend-design:frontend-design`,
-`ui-ux-pro-max`, `shadcn` and `seo-for-claude`. None of them are installed in
-this environment. Their principles, as summarized in Section 0 and Sections 3,
-6 and 7, were applied by hand. If those skills are later installed, re-run the
-design and SEO passes against Phase 3 and Phase 5.
+The brief's Section 0 names four skills. Three are now installed and have been
+run against the built site:
+
+| Skill | Run at | What it changed |
+|---|---|---|
+| `frontend-design:frontend-design` | post-launch polish | Removed decorative numbering where content is not a sequence; consolidated 26 ad-hoc font sizes into a fluid modular scale |
+| `ui-ux-pro-max:ui-ux-pro-max` | post-launch polish | Found two WCAG 2.2 AA gaps (focus obscured by the sticky header, sub-24px link targets) and the missing RFQ error summary |
+| `claude-seo:seo-schema` | post-launch polish | Validated all emitted JSON-LD: 0 errors across 14 pages |
+
+`shadcn` is still not installed; its primitives were hand-written from the
+published component APIs and restyled to the tokens.
+
+Two things worth knowing before re-running the design skills:
+
+1. `frontend-design` flags several traits as generic AI-design tells that this
+   brief *explicitly mandates*: warm ivory ground, high-contrast display serif,
+   hairline rules, mono for data labels, all-caps eyebrows, middle-dot meta
+   strings. The skill's own precedence rule settles it: "Where the brief pins
+   down a visual direction, follow it exactly, the brief's own words always
+   win." Those stay. What was changed is the axes the brief left free, where a
+   default had been taken without a reason.
+2. `claude-seo:seo-schema` records that Google retired FAQ rich results for all
+   sites on 7 May 2026. The site still emits FAQPage, per the skill's own
+   guidance to keep it rather than remove it: it no longer earns a Google rich
+   result, but it remains useful to other consumers. Section 7.2 of the brief
+   requires it.
 
 ## Layout of the code
 

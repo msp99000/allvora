@@ -28,14 +28,14 @@ export function SectionHeading({
       <Heading
         className={cn(
           Heading === "h1"
-            ? "text-[2rem] leading-[1.12] sm:text-[2.6rem] lg:text-[3.1rem]"
-            : "text-[1.6rem] leading-[1.18] sm:text-[2rem]"
+            ? "type-title"
+            : "type-section"
         )}
       >
         {title}
       </Heading>
       {intro ? (
-        <div className="mt-5 max-w-2xl text-[1.0625rem] leading-relaxed text-ink-600">
+        <div className="mt-5 max-w-2xl type-lead text-ink-600">
           {intro}
         </div>
       ) : null}

@@ -60,10 +60,10 @@ export default async function MarketPage({ params }: PageProps<"/markets/[region
             className="mb-8"
           />
           <div className="max-w-3xl">
-            <h1 className="text-[1.95rem] leading-[1.12] sm:text-[2.5rem] lg:text-[2.85rem]">
+            <h1 className="type-title">
               {market.h1}
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               {market.intro}
             </p>
           </div>

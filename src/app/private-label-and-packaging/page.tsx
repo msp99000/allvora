@@ -86,10 +86,10 @@ export default function PrivateLabelPage() {
           />
           <div className="max-w-3xl">
             <Eyebrow>Packaging</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.9rem] lg:text-[3.2rem]">
+            <h1 className="mt-5 type-title">
               Your brand, our sourcing.
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               We supply in bulk, retail and private-label formats depending on
               product and destination. Buyers can request standard commercial
               grades, premium grades, customized specifications, contract-specific
@@ -111,7 +111,7 @@ export default function PrivateLabelPage() {
           <ul className="grid border-l border-t border-rule lg:grid-cols-3 [&>li]:border-b [&>li]:border-r [&>li]:border-rule">
             {formats.map((format) => (
               <li key={format.title} className="p-7 sm:p-8">
-                <h3 className="text-[1.25rem] leading-snug">{format.title}</h3>
+                <h3 className="type-card">{format.title}</h3>
                 <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink-600">
                   {format.body}
                 </p>
@@ -142,7 +142,7 @@ export default function PrivateLabelPage() {
                 <Eyebrow className="mb-3 tabular-nums text-gold-700">
                   {String(index + 1).padStart(2, "0")}
                 </Eyebrow>
-                <h3 className="text-[1.125rem] leading-snug">{stage.title}</h3>
+                <h3 className="type-card">{stage.title}</h3>
                 <p className="mt-2.5 text-[0.875rem] leading-relaxed text-ink-600">
                   {stage.body}
                 </p>

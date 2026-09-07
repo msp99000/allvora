@@ -34,10 +34,10 @@ export function RfqCta({
       <FeatherArcOnDark className="absolute -right-16 top-0 h-full w-[36rem] opacity-90" />
       <Container className="relative py-16 sm:py-20">
         <div className="max-w-2xl">
-          <h2 className="text-[1.7rem] leading-tight text-ivory-50 sm:text-[2.1rem]">
+          <h2 className="type-section text-ivory-50">
             {heading}
           </h2>
-          <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-ivory-50/80">
+          <p className="mt-4 max-w-xl type-lead text-ivory-50/80">
             {body}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">

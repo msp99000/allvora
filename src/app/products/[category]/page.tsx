@@ -62,10 +62,10 @@ export default async function CategoryPage({
           <Breadcrumbs crumbs={categoryCrumbs(category)} className="mb-8" />
           <div className="max-w-3xl">
             <Eyebrow>{category.name}</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.8rem] lg:text-[3.1rem]">
+            <h1 className="type-title mt-5">
               {category.h1}
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               {category.intro}
             </p>
           </div>
@@ -81,7 +81,7 @@ export default async function CategoryPage({
           <Container className="py-16 sm:py-20">
             <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
               <SectionHeading
-                eyebrow={`${String(index + 1).padStart(2, "0")} · ${product.varieties.length} varieties`}
+                eyebrow={`${product.varieties.length} varieties and grades`}
                 title={
                   <Link
                     id={`product-${product.slug}`}

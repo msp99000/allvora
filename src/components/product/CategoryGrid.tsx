@@ -12,7 +12,7 @@ import { products } from "@/data/products";
 export function CategoryGrid() {
   return (
     <RuleGrid cols={2}>
-      {categories.map((category, index) => {
+      {categories.map((category) => {
         const count = products.filter((p) => p.category === category.slug).length;
         return (
           <li key={category.slug}>
@@ -28,10 +28,9 @@ export function CategoryGrid() {
               />
               <div className="flex flex-1 flex-col p-7 sm:p-9">
                 <Eyebrow className="mb-4 tabular-nums">
-                  {String(index + 1).padStart(2, "0")} · {count}{" "}
-                  {count === 1 ? "product" : "products"}
+                  {count} {count === 1 ? "product" : "products"}
                 </Eyebrow>
-                <h3 className="text-[1.4rem] leading-tight transition-colors group-hover:text-peacock-600">
+                <h3 className="type-card-lg transition-colors group-hover:text-peacock-600">
                   {category.name}
                 </h3>
                 <p className="mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-ink-600">

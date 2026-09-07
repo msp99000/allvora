@@ -40,10 +40,10 @@ export default function SourcingPage() {
           />
           <div className="max-w-3xl">
             <Eyebrow>Sourcing</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.9rem] lg:text-[3.2rem]">
+            <h1 className="mt-5 type-title">
               From producing region to port, with a paper trail.
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               We source each requirement from the region best known for it:
               chilli from Guntur and Byadagi, pepper and cardamom from the
               Western Ghats, turmeric from Erode, Salem and Nizamabad, Basmati
@@ -72,7 +72,7 @@ export default function SourcingPage() {
                 className="grid gap-3 border-b border-rule py-7 sm:grid-cols-[15rem_1fr] sm:gap-8"
               >
                 <div>
-                  <h3 className="text-[1.15rem] leading-snug">{region.name}</h3>
+                  <h3 className="type-card">{region.name}</h3>
                   <Eyebrow className="mt-1.5">{region.area}</Eyebrow>
                 </div>
                 <div>
@@ -114,7 +114,7 @@ export default function SourcingPage() {
                 <Eyebrow className="mb-4 tabular-nums text-gold-700">
                   {String(index + 1).padStart(2, "0")}
                 </Eyebrow>
-                <h3 className="text-[1.25rem] leading-snug">{stage.title}</h3>
+                <h3 className="type-card">{stage.title}</h3>
                 <p className="mt-3 max-w-md text-[0.9375rem] leading-relaxed text-ink-600">
                   {stage.body}
                 </p>

@@ -41,10 +41,10 @@ export default function MarketsHubPage() {
           />
           <div className="max-w-3xl">
             <Eyebrow>Markets</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.1] sm:text-[2.9rem] lg:text-[3.2rem]">
+            <h1 className="mt-5 type-title">
               Positioned to serve buyers worldwide.
             </h1>
-            <p className="mt-8 text-[1.0625rem] leading-relaxed text-ink-600">
+            <p className="mt-8 type-lead text-ink-600">
               India&apos;s agricultural and processed-food products already reach
               more than 200 countries and regions. We coordinate
               destination-specific specifications, labelling and documentation
@@ -60,17 +60,14 @@ export default function MarketsHubPage() {
             Regions
           </h2>
           <ul className="border-t border-rule-strong">
-            {markets.map((market, index) => (
+            {markets.map((market) => (
               <li key={market.slug} className="border-b border-rule">
                 <Link
                   href={`/markets/${market.slug}`}
                   className="group grid gap-4 py-8 transition-colors hover:bg-ivory-100/60 sm:grid-cols-[1fr_1.6fr] sm:gap-10 sm:px-2"
                 >
                   <div>
-                    <Eyebrow className="mb-3 tabular-nums">
-                      {String(index + 1).padStart(2, "0")}
-                    </Eyebrow>
-                    <h3 className="text-[1.4rem] leading-tight transition-colors group-hover:text-peacock-600">
+                    <h3 className="type-card-lg transition-colors group-hover:text-peacock-600">
                       {market.name}
                     </h3>
                   </div>

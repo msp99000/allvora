@@ -28,7 +28,7 @@ export function Footer() {
         <div className="grid gap-x-8 gap-y-12 lg:grid-cols-[1.1fr_2fr]">
           <div>
             <Logo onDark />
-            <p className="mt-6 max-w-xs font-display text-[1.15rem] leading-snug text-ivory-50">
+            <p className="mt-6 max-w-xs font-display type-card text-ivory-50">
               {site.tagline}
             </p>
             <div className="mt-8">
