@@ -27,6 +27,14 @@ const toneWash: Record<ImageTone, string> = {
   deep: "from-peacock-100 via-ivory-200 to-peacock-100",
 };
 
+/** Placeholder washes for slots sitting on a dark ground. */
+const toneWashDark: Record<ImageTone, string> = {
+  spice: "from-peacock-800 via-peacock-900 to-peacock-800",
+  leaf: "from-peacock-700 via-peacock-900 to-peacock-800",
+  grain: "from-peacock-800 via-peacock-700 to-peacock-900",
+  deep: "from-peacock-900 via-peacock-800 to-peacock-900",
+};
+
 export interface MediaProps {
   image: ImageAsset;
   /** CSS aspect-ratio value, e.g. "4 / 3". The wrapper reserves this space. */
@@ -35,6 +43,8 @@ export interface MediaProps {
   sizes?: string;
   priority?: boolean;
   className?: string;
+  /** Set when the slot sits on a dark ground, so the placeholder matches. */
+  onDark?: boolean;
 }
 
 export function Media({
@@ -43,10 +53,15 @@ export function Media({
   sizes = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
   priority = false,
   className,
+  onDark = false,
 }: MediaProps) {
   return (
     <div
-      className={cn("relative w-full overflow-hidden bg-ivory-100", className)}
+      className={cn(
+        "relative w-full overflow-hidden",
+        onDark ? "bg-peacock-800" : "bg-ivory-100",
+        className
+      )}
       style={{ aspectRatio: ratio }}
     >
       {image.src ? (
@@ -59,7 +74,7 @@ export function Media({
           className="object-cover"
         />
       ) : (
-        <Placeholder tone={image.tone} />
+        <Placeholder tone={image.tone} onDark={onDark} />
       )}
     </div>
   );
@@ -70,22 +85,30 @@ export function Media({
  * is hidden from assistive technology. The real alt text arrives with the
  * photograph.
  */
-function Placeholder({ tone }: { tone: ImageTone }) {
+function Placeholder({ tone, onDark }: { tone: ImageTone; onDark: boolean }) {
   return (
     <div
       aria-hidden
       className={cn(
         "absolute inset-0 flex items-center justify-center bg-gradient-to-br",
-        toneWash[tone]
+        onDark ? toneWashDark[tone] : toneWash[tone]
       )}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/brand/allvora-logo.svg"
         alt=""
-        className="h-[62%] w-auto opacity-[0.14] mix-blend-multiply"
+        className={cn(
+          "h-[62%] w-auto",
+          onDark ? "opacity-[0.20]" : "opacity-[0.14] mix-blend-multiply"
+        )}
       />
-      <span className="pointer-events-none absolute inset-0 border border-rule" />
+      <span
+        className={cn(
+          "pointer-events-none absolute inset-0 border",
+          onDark ? "border-rule-invert" : "border-rule"
+        )}
+      />
     </div>
   );
 }

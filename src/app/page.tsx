@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CategoryGrid } from "@/components/product/CategoryGrid";
 import { RfqCta } from "@/components/product/RfqCta";
 import { Container } from "@/components/shared/Container";
+import { Media } from "@/components/shared/Media";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import {
   FeatherArcDivider,
@@ -13,6 +14,7 @@ import {
 import { MarketChips } from "@/components/shared/MarketChips";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/button";
+import { heroImage } from "@/data/images";
 import { marketsStripLine } from "@/data/markets";
 import { site } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
@@ -48,16 +50,39 @@ const steps = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero. Section 3.2: a thesis, not a stat card. One orchestrated reveal. */}
-      <section className="relative overflow-hidden border-b border-rule">
-        <FeatherArcUnderlay className="absolute -right-28 -top-24 h-[42rem] w-[42rem] opacity-80 lg:-right-16" />
-        <Container className="relative py-20 sm:py-24 lg:py-32">
+      {/* Hero. A full-bleed dark photographic band: the commodity itself is the
+          first thing a buyer sees, with the thesis set over it. */}
+      <section className="relative isolate overflow-hidden bg-peacock-900">
+        <div className="absolute inset-0">
+          <Media
+            image={heroImage}
+            ratio="16 / 9"
+            sizes="100vw"
+            priority
+            onDark
+            className="h-full w-full [&>*]:h-full [&>img]:object-cover"
+          />
+        </div>
+        {/* Scrim. Keeps the headline legible over any photograph that lands here. */}
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-r from-peacock-900 via-peacock-900/85 to-peacock-900/40"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-peacock-900 via-transparent to-peacock-900/50"
+        />
+        <FeatherArcOnDark className="absolute -right-10 top-0 hidden h-full w-[38rem] opacity-70 lg:block" />
+
+        <Container className="relative py-24 sm:py-32 lg:py-40">
           <div className="max-w-3xl">
-            <Eyebrow className="reveal reveal-1">EXPORT &amp; SOURCING · INDIA</Eyebrow>
-            <h1 className="reveal reveal-2 mt-5 type-display">
+            <Eyebrow className="reveal reveal-1 text-gold-300">
+              EXPORT &amp; SOURCING · INDIA
+            </Eyebrow>
+            <h1 className="reveal reveal-2 type-display mt-5 text-ivory-50">
               Quality products from India, sourced to your specification.
             </h1>
-            <p className="reveal reveal-3 mt-7 max-w-2xl type-lead text-ink-600 sm:text-[1.15rem]">
+            <p className="reveal reveal-3 type-lead mt-7 max-w-2xl text-ivory-50/80">
               Allvora Resources connects international buyers with spices, rice,
               ghee, tea, coffee and natural products from India&apos;s producing
               regions. You define the grade, specification, packaging and
@@ -68,7 +93,7 @@ export default function HomePage() {
               <Button asChild variant="gold" size="lg">
                 <Link href="/request-a-quote">Request a quote</Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="onDark" size="lg" className="on-peacock">
                 <Link href="/products">Explore products</Link>
               </Button>
             </div>

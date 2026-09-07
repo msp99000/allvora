@@ -22,44 +22,52 @@
    ========================================================================== */
 
 @theme {
-  --color-peacock-900: #0e3b36;
-  --color-peacock-800: #10453f;
-  --color-peacock-700: #14514a;
+  /* ---- Dark grounds. Near-black with a green undertone taken from the brand
+     teal, so the dark sections read as the same family as the logo rather than
+     as generic charcoal. ---- */
+  --color-peacock-900: #0b1a18;
+  --color-peacock-800: #122421;
+  --color-peacock-700: #16332e;
   --color-peacock-600: #1b6b5f;
-  --color-peacock-100: #d8e6e2;
+  --color-peacock-100: #d3e0dc;
 
-  /* gold-500 is a fill and rule colour. Use gold-700 for text on ivory and
-     gold-300 for text on peacock. */
-  --color-gold-500: #c98a2b;
-  --color-gold-700: #8a5a0d;
-  --color-gold-300: #e3b25e;
-  --color-gold-100: #f2e3c7;
+  /* ---- Gold. The logo's own #BA9E64.
+     It measures 2.57 on white, so it is never text on a light ground. On dark
+     it measures 6.95 and carries text freely. gold-700 is the darkened cut for
+     light grounds; gold-300 the lightened cut for dark ones. ---- */
+  --color-gold-500: #ba9e64;
+  --color-gold-700: #7a6432;
+  --color-gold-300: #d4bc85;
+  --color-gold-100: #efe7d6;
 
   --color-cobalt-700: #1f3a8a;
 
-  --color-ivory-50: #faf7f0;
-  --color-ivory-100: #f2ece0;
-  --color-ivory-200: #e7dfd0;
+  /* ---- Light grounds. Cool white and grey-green, deliberately not cream.
+     The warm cream ground was the single strongest generic-template signal. ---- */
+  --color-ivory-50: #ffffff;
+  --color-ivory-100: #f1f3f2;
+  --color-ivory-200: #e3e7e5;
 
-  --color-ink-900: #221a14;
-  --color-ink-600: #5a4a3c;
-  --color-ink-500: #756456;
+  /* ---- Text. Cool near-black rather than warm brown ink. ---- */
+  --color-ink-900: #0e1614;
+  --color-ink-600: #48534f;
+  --color-ink-500: #66716c;
 
-  /* Hairlines. Section 6: 1px rules in ink-900 at 15%. */
-  --color-rule: color-mix(in srgb, #221a14 15%, transparent);
-  --color-rule-strong: color-mix(in srgb, #221a14 30%, transparent);
-  --color-rule-invert: color-mix(in srgb, #faf7f0 22%, transparent);
+  --color-rule: color-mix(in srgb, #0e1614 12%, transparent);
+  --color-rule-strong: color-mix(in srgb, #0e1614 26%, transparent);
+  --color-rule-invert: color-mix(in srgb, #ffffff 20%, transparent);
 
-  --font-display: var(--font-caslon), "Iowan Old Style", "Palatino Linotype",
-    Georgia, serif;
+  /* ---- Type. One family carries display and body.
+     The display serif was the other half of the generic signature, so headings
+     are now the same grotesk as body copy, separated by weight, width and
+     tracking rather than by a second typeface. Mono is retained for the
+     specification label system, which is functional rather than decorative. ---- */
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
   --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
 
-  /* Squared, document-like. Nothing on this site is a soft rounded card. */
   --radius-ledger: 2px;
-
   --tracking-eyebrow: 0.14em;
-
   --ease-reveal: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -89,8 +97,9 @@
   h4 {
     font-family: var(--font-display);
     color: var(--color-peacock-900);
-    font-weight: 400;
-    letter-spacing: -0.012em;
+    font-weight: 600;
+    font-stretch: 108%;
+    letter-spacing: -0.021em;
     text-wrap: balance;
   }
 

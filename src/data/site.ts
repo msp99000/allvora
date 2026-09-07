@@ -39,9 +39,10 @@ export interface SiteConfig {
   responseWindow: string;
 }
 
-const EMAIL = "{{EMAIL}}";
-const PHONE = "{{PHONE}}";
-const WHATSAPP = "{{WHATSAPP}}";
+const EMAIL = "business@allvoraresources.com";
+/** E.164 for links, spaced for display. */
+const PHONE_E164 = "+916369775715";
+const PHONE_DISPLAY = "+91 63697 75715";
 
 export const site: SiteConfig = {
   name: "Allvora Resources",
@@ -54,17 +55,17 @@ export const site: SiteConfig = {
   email: {
     label: EMAIL,
     href: `mailto:${EMAIL}`,
-    placeholder: true,
+    placeholder: false,
   },
   phone: {
-    label: PHONE,
-    href: `tel:${PHONE.replace(/[^+\d]/g, "")}`,
-    placeholder: true,
+    label: PHONE_DISPLAY,
+    href: `tel:${PHONE_E164}`,
+    placeholder: false,
   },
   whatsapp: {
-    label: WHATSAPP,
-    href: `https://wa.me/${WHATSAPP.replace(/[^\d]/g, "")}`,
-    placeholder: true,
+    label: PHONE_DISPLAY,
+    href: `https://wa.me/${PHONE_E164.replace(/[^\d]/g, "")}`,
+    placeholder: false,
   },
   address: {
     locality: "{{CITY}}",

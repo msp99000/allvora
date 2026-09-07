@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, IBM_Plex_Mono, Libre_Caslon_Text } from "next/font/google";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -12,21 +12,21 @@ import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 /**
- * Fonts, Section 3.2. All three are self-hosted by next/font at build time, so
+ * Fonts. All are self-hosted by next/font at build time, so
  * there is no third-party font request and no render-blocking stylesheet.
  * next/font also emits a size-adjusted local fallback, which is what keeps the
- * swap from shifting layout (Section 3.4).
+ * swap from shifting layout.
+ *
+ * Section 3.2 of the brief specified a display serif. The client found that the
+ * cream-plus-serif combination read as a generic AI-design template, so the
+ * site now runs on one grotesk, with weight, width and tracking separating
+ * display from body.
  */
-const caslon = Libre_Caslon_Text({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-caslon",
-});
-
 const archivo = Archivo({
   subsets: ["latin"],
+  // The width axis is what gives headings their presence now that the display
+  // serif is gone: the same family, set wider and heavier for display.
+  axes: ["wdth"],
   display: "swap",
   variable: "--font-archivo",
 });
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0E3B36",
+  themeColor: "#0B1A18",
   width: "device-width",
   initialScale: 1,
 };
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${caslon.variable} ${archivo.variable} ${plexMono.variable} h-full`}
+      className={`${archivo.variable} ${plexMono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-ivory-50">
         <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />

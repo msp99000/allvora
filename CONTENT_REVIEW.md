@@ -17,9 +17,9 @@ today (footer, contact page, quote page, WhatsApp links in the header).
 
 | Token | Where it is set | Appears on |
 |---|---|---|
-| `{{EMAIL}}` | `src/data/site.ts` | footer, /contact, /request-a-quote |
-| `{{PHONE}}` | `src/data/site.ts` | footer, /contact |
-| `{{WHATSAPP}}` | `src/data/site.ts` | header icon, footer, /contact, /request-a-quote |
+| `business@allvoraresources.com` (resolved) | `src/data/site.ts` | footer, /contact, /request-a-quote |
+| `+91 63697 75715` (resolved) | `src/data/site.ts` | footer, /contact |
+| `+91 63697 75715` (resolved) | `src/data/site.ts` | header icon, footer, /contact, /request-a-quote |
 | `{{CITY}}`, `{{STATE}}` | `src/data/site.ts` | /contact registered office |
 
 All five are set in one file. Replace the values and set each channel's

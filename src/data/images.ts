@@ -31,6 +31,14 @@ export interface ImageAsset {
   tone: ImageTone;
 }
 
+/** The full-bleed home hero. The single most important image on the site. */
+export const heroImage: ImageAsset = {
+  src: null,
+  alt: "Dried red chillies in an Indian export warehouse, sacks open and stacked, shot wide.",
+  brief: "Wide, cinematic, slightly elevated: open jute sacks of dried red chilli and turmeric in a warehouse or mandi, natural side light from a doorway, dust in the air. Must have empty darker space on the left third for the headline to sit over. Documentary rather than styled.",
+  tone: "deep",
+};
+
 export const categoryImages: Record<CategorySlug, ImageAsset> = {
   spices: {
     src: null,
@@ -154,6 +162,7 @@ export function varietyImage(
 /** Every image slot still awaiting a photograph, for CONTENT_REVIEW.md. */
 export function pendingPhotography(): { key: string; brief: string }[] {
   const pending: { key: string; brief: string }[] = [];
+  if (!heroImage.src) pending.push({ key: "hero", brief: heroImage.brief });
   for (const [key, asset] of Object.entries(categoryImages)) {
     if (!asset.src) pending.push({ key: `category/${key}`, brief: asset.brief });
   }
