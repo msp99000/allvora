@@ -52,6 +52,7 @@ export default function QualityPage() {
             ]}
             className="mb-8"
           />
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-16">
           <div className="max-w-3xl">
             <Eyebrow>Quality first</Eyebrow>
             <h1 className="mt-5 type-title">
@@ -64,6 +65,14 @@ export default function QualityPage() {
               requirements, packaging, labelling, shelf life and
               destination-market requirements.
             </p>
+          </div>
+          <Media
+            image={pageImages.quality!}
+            ratio="4 / 3"
+            sizes="(min-width: 1024px) 38vw, 100vw"
+            priority
+            className="border border-rule"
+          />
           </div>
         </Container>
       </section>
@@ -99,14 +108,7 @@ export default function QualityPage() {
             intro="Where applicable, products are supported by the following documentation, coordinated per product and per destination."
             className="mb-12"
           />
-          <div className="mb-12 grid gap-8 lg:grid-cols-[1fr_1.35fr] lg:items-start">
-            <Media
-              image={pageImages.quality!}
-              ratio="4 / 3"
-              sizes="(min-width: 1024px) 34vw, 100vw"
-              className="border border-rule"
-            />
-            <div className="ledger-scroll">
+          <div className="ledger-scroll max-w-4xl">
             <table className="ledger">
               <caption className="sr-only">
                 Export documentation supplied with shipments
@@ -130,7 +132,6 @@ export default function QualityPage() {
                 ))}
               </tbody>
             </table>
-            </div>
           </div>
           <p className="ledger-foot max-w-4xl">
             COA available on request · Specifications confirmed before shipment

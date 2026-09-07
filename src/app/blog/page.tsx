@@ -4,9 +4,11 @@ import Link from "next/link";
 import { RfqCta } from "@/components/product/RfqCta";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { Container } from "@/components/shared/Container";
+import { Media } from "@/components/shared/Media";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { postsNewestFirst } from "@/data/blog";
+import { pageImages } from "@/data/images";
 import { buildMetadata, itemListJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -69,13 +71,21 @@ export default function BlogHubPage() {
               <li key={post.slug} className="border-b border-rule">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group grid gap-4 py-9 transition-colors hover:bg-ivory-100/60 sm:grid-cols-[13rem_1fr] sm:gap-10 sm:px-2"
+                  className="group grid gap-5 py-9 transition-colors hover:bg-ivory-100/60 sm:grid-cols-[16rem_1fr] sm:gap-10 sm:px-2"
                 >
-                  <Eyebrow className="tabular-nums">
-                    {formatDate(post.published)}
-                    <br />
-                    {post.readingMinutes} min read
-                  </Eyebrow>
+                  <div>
+                    {pageImages[`blog/${post.slug}`] ? (
+                      <Media
+                        image={pageImages[`blog/${post.slug}`]!}
+                        ratio="16 / 9"
+                        sizes="(min-width: 640px) 16rem, 100vw"
+                        className="mb-4 border border-rule"
+                      />
+                    ) : null}
+                    <Eyebrow className="tabular-nums">
+                      {formatDate(post.published)} · {post.readingMinutes} min read
+                    </Eyebrow>
+                  </div>
                   <div>
                     <h3 className="max-w-2xl type-card-lg transition-colors group-hover:text-peacock-600">
                       {post.title}

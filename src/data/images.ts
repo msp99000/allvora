@@ -195,55 +195,73 @@ export const productImages: Record<string, ImageAsset> = {
  */
 export const pageImages: Record<string, ImageAsset> = {
   about: {
-    src: null,
+    src: "/photography/pages/about.jpg",
+    blurDataURL:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAAD/wAARCAAMABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAMDAwMDAwUDAwUHRQUFB0nHR0dHScxJycnJycxOzExMTExMTs7Ozs7Ozs7R0dHR0dHU1NTU1NdXV1dXV1dXV1d/9sAQwEODw8YFhgoFhYoYUI2QmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh/90ABAAB/9oADAMBAAIRAxEAPwB1v4tZABJArH2JH+NXF8ZuPuwxjnuTXm0haN9ik4GackztEztyVwB+NYWe51Wj2P/Z",
     alt: "Harvested crop drying in the sun on an Indian farm, shot wide in late afternoon light.",
     brief: "Wide documentary landscape: red chillies or turmeric spread to dry on a drying yard in rural India, late golden light, low horizon, no faces. Establishes the supply base.",
     tone: "spice",
   },
   sourcing: {
-    src: null,
+    src: "/photography/pages/sourcing.jpg",
+    blurDataURL:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAAD/wAARCAAMABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAMDAwMDAwUDAwUHRQUFB0nHR0dHScxJycnJycxOzExMTExMTs7Ozs7Ozs7R0dHR0dHU1NTU1NdXV1dXV1dXV1d/9sAQwEODw8YFhgoFhYoYUI2QmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh/90ABAAB/9oADAMBAAIRAxEAPwDMOpsEiuAqN5Q+Ujb07ZGPzzTBrZzJPsRWkB3EgY/DiubsmaW5s4WPylgDj8qsauot7yeCMnap4z9KrmdrkcqvY//Z",
     alt: "Jute sacks of graded spices stacked in a sorting warehouse.",
     brief: "Documentary interior: rows of filled and labelled jute sacks in a grading or sorting shed, weighing scale visible, cool daylight from high windows. Process rather than product.",
     tone: "deep",
   },
   quality: {
-    src: null,
+    src: "/photography/pages/quality.jpg",
+    blurDataURL:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAAD/wAARCAAMABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAMDAwMDAwUDAwUHRQUFB0nHR0dHScxJycnJycxOzExMTExMTs7Ozs7Ozs7R0dHR0dHU1NTU1NdXV1dXV1dXV1d/9sAQwEODw8YFhgoFhYoYUI2QmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh/90ABAAB/9oADAMBAAIRAxEAPwDVt9RunAPkrAp+7u5Jx2AFaV0l1dKr2ro20EMpbAOR16HkVRuraC6jKzoDsJKnoQSByK4+S+uk1NLJXPl78HnJb6k1ViD/2Q==",
     alt: "A spice sample being weighed and examined against a specification sheet in a testing lab.",
     brief: "Close documentary: a small sample of ground spice on a laboratory balance beside a printed specification sheet and a sample jar, clinical daylight. Reads as testing, not cooking.",
     tone: "leaf",
   },
   packaging: {
-    src: null,
+    src: "/photography/pages/packaging.jpg",
+    blurDataURL:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAAD/wAARCAAMABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAMDAwMDAwUDAwUHRQUFB0nHR0dHScxJycnJycxOzExMTExMTs7Ozs7Ozs7R0dHR0dHU1NTU1NdXV1dXV1dXV1d/9sAQwEODw8YFhgoFhYoYUI2QmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh/90ABAAB/9oADAMBAAIRAxEAPwCHSbmC5lKY4xkVozNDIrKpBI6gHOKp2mn2y/MgKE/3SRWmLSBWaTGWbGcnristbmmlj//Z",
     alt: "Bulk export sacks beside retail-size pouches of the same product.",
     brief: "A 25 kg export bag standing beside small retail pouches and a carton of the same product, plain unbranded packaging, neutral documentary light. Shows the bulk to retail range in one frame.",
     tone: "grain",
   },
   markets: {
-    src: null,
+    src: "/photography/pages/markets.jpg",
+    blurDataURL:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAACQAAAAD/wAARCAAJABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAMDAwMDAwUDAwUHRQUFB0nHR0dHScxJycnJycxOzExMTExMTs7Ozs7Ozs7R0dHR0dHU1NTU1NdXV1dXV1dXV1d/9sAQwEODw8YFhgoFhYoYUI2QmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh/90ABAAB/9oADAMBAAIRAxEAPwDl7fXUTAMX6/8A1q0otegEmyRNyY6k4OfyrhKWqbbJSSP/2Q==",
     alt: "Stacked shipping containers at an Indian port, seen from the dockside.",
     brief: "Wide dockside view of stacked shipping containers and a gantry crane at an Indian container port, early morning haze, no readable shipping line branding.",
     tone: "deep",
   },
   contact: {
-    src: null,
+    src: "/photography/pages/contact.jpg",
+    blurDataURL:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAAD/wAARCAAMABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAMDAwMDAwUDAwUHRQUFB0nHR0dHScxJycnJycxOzExMTExMTs7Ozs7Ozs7R0dHR0dHU1NTU1NdXV1dXV1dXV1d/9sAQwEODw8YFhgoFhYoYUI2QmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh/90ABAAB/9oADAMBAAIRAxEAPwDiNJtbO4vFW/LiDBLeWMt6DgZ79aXV7S0tr6SKxLmEAbfMGGPrxxx6U/R7iW3vkkiOGAxRrdxLcX7yynLEDJ/Cpu72HZWP/9k=",
     alt: "The doorway of an Indian spice warehouse, open to the loading yard.",
     brief: "The open doorway of a warehouse seen from inside, bright loading yard beyond, sacks stacked either side. Warm and human without showing faces.",
     tone: "spice",
   },
   "blog/1121-vs-1509-basmati": {
-    src: null,
+    src: "/photography/pages/blog-1121-vs-1509.jpg",
+    blurDataURL:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAACQAAAAD/wAARCAAJABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAMDAwMDAwUDAwUHRQUFB0nHR0dHScxJycnJycxOzExMTExMTs7Ozs7Ozs7R0dHR0dHU1NTU1NdXV1dXV1dXV1d/9sAQwEODw8YFhgoFhYoYUI2QmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh/90ABAAB/9oADAMBAAIRAxEAPwDDtV0P+xyZR/pG0ktnkN6YpLxND/slTCP3+0Hdnkt6Yrke9IetTy+Y7n//2Q==",
     alt: "Two piles of long-grain Basmati rice side by side for comparison.",
     brief: "Overhead macro: two neat piles of raw long-grain Basmati side by side on dark slate, a fine line between them, subtly different grain lengths.",
     tone: "grain",
   },
   "blog/black-pepper-grades-explained": {
-    src: null,
+    src: "/photography/pages/blog-pepper-grades.jpg",
+    blurDataURL:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAACQAAAAD/wAARCAAJABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAMDAwMDAwUDAwUHRQUFB0nHR0dHScxJycnJycxOzExMTExMTs7Ozs7Ozs7R0dHR0dHU1NTU1NdXV1dXV1dXV1d/9sAQwEODw8YFhgoFhYoYUI2QmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh/90ABAAB/9oADAMBAAIRAxEAPwDlri9Yu42ZA6H1NZc8isDwc9qmbvVKWpHc/9k=",
     alt: "Black peppercorns separated into grade lots by berry size.",
     brief: "Overhead macro: black peppercorns divided into three or four small separated lots of visibly different berry size, on dark slate.",
     tone: "deep",
   },
   "blog/how-to-verify-an-indian-exporter": {
-    src: null,
+    src: "/photography/pages/blog-verify-exporter.jpg",
+    blurDataURL:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAACQAAAAD/wAARCAAJABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAMDAwMDAwUDAwUHRQUFB0nHR0dHScxJycnJycxOzExMTExMTs7Ozs7Ozs7R0dHR0dHU1NTU1NdXV1dXV1dXV1d/9sAQwEODw8YFhgoFhYoYUI2QmFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh/90ABAAB/9oADAMBAAIRAxEAPwDA8Ptp6z7L5BhvuuTgA+h+vaukm1DT7dT9skR4DuzDjcnXjacZJ+nA9a4OL/VVV1T/AI+f+AisI6uxtLRXP//Z",
     alt: "Export documents, a rubber stamp and an ink pad on a desk.",
     brief: "Close documentary still life: stacked export paperwork, a rubber stamp and ink pad, a pen, on a worn wooden desk. No readable text on the documents.",
     tone: "grain",

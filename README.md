@@ -157,7 +157,8 @@ All 16 image slots are filled. To replace one, or to add a slot, the change is a
 single line, and nothing shifts because the slot already reserves its aspect
 ratio.
 
-Images live in `public/photography/` as JPEG. Source files should be converted
+Product and category images live in `public/photography/`; images for the rest
+of the site live in `public/photography/pages/`. Both as JPEG. Source files should be converted
 before committing: PNG exports from image models run 2 MB each and about 35 MB
 for a full set, against roughly 5 MB as quality-82 JPEG for no visible
 difference once `next/image` re-encodes to AVIF.

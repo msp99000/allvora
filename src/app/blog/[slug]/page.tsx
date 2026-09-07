@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 
 import { RfqCta } from "@/components/product/RfqCta";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
+import { pageImages } from "@/data/images";
 import { Container } from "@/components/shared/Container";
+import { Media } from "@/components/shared/Media";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { blogPosts, getPost } from "@/data/blog";
@@ -96,13 +98,22 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
                 </time>{" "}
                 · {post.readingMinutes} min read
               </Eyebrow>
-              <h1 className="mt-5 type-title">
+              <h1 className="type-title mt-5">
                 {post.title}
               </h1>
               <p className="mt-7 type-lead text-ink-600">
                 {post.excerpt}
               </p>
             </div>
+            {pageImages[`blog/${post.slug}`] ? (
+              <Media
+                image={pageImages[`blog/${post.slug}`]!}
+                ratio="16 / 9"
+                sizes="(min-width: 1024px) 62rem, 100vw"
+                priority
+                className="mt-12 border border-rule"
+              />
+            ) : null}
           </Container>
         </header>
 

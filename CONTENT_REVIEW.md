@@ -221,10 +221,13 @@ Swapping in Libre Caslon Text is a follow-up if the cards matter enough.
 
 ---
 
-## 6. Photography: 16 slots, filled with generated images
+## 6. Photography: 25 slots, all filled with generated images
 
-All 16 slots now carry an image, in `public/photography/` as quality-82 JPEG,
-served through `next/image` as AVIF. Alt text was rewritten against what each
+Every image slot on the site now carries an image. 16 product and category
+images in `public/photography/`, and 9 page images (about, sourcing, quality,
+packaging, markets, contact and the three blog posts) in
+`public/photography/pages/`. All quality-82 JPEG, served through `next/image`
+as AVIF, each with a 16px base64 blur placeholder. Alt text was rewritten against what each
 image actually shows rather than against the shot brief.
 
 **Two things to know about them.**
