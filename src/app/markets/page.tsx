@@ -4,9 +4,9 @@ import Link from "next/link";
 import { RfqCta } from "@/components/product/RfqCta";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { Container } from "@/components/shared/Container";
-import { Eyebrow } from "@/components/shared/Eyebrow";
-import { FeatherArcUnderlay } from "@/components/shared/FeatherArc";
+import { Media } from "@/components/shared/Media";
 import { JsonLd } from "@/components/shared/JsonLd";
+import { pageImages } from "@/data/images";
 import { markets } from "@/data/markets";
 import { getProduct } from "@/data/products";
 import { buildMetadata, itemListJsonLd } from "@/lib/seo";
@@ -29,22 +29,32 @@ export default function MarketsHubPage() {
         )}
       />
 
-      <section className="relative overflow-hidden border-b border-rule">
-        <FeatherArcUnderlay className="absolute -right-32 -top-24 h-[38rem] w-[38rem] opacity-70" />
-        <Container className="relative py-16 sm:py-20">
+      <section className="relative isolate overflow-hidden bg-peacock-900">
+        <div className="absolute inset-0">
+          <Media
+            image={pageImages.markets!}
+            ratio="16 / 9"
+            sizes="100vw"
+            priority
+            onDark
+            className="h-full w-full [&>*]:h-full [&>img]:object-cover"
+          />
+        </div>
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-peacock-900 via-peacock-900/85 to-peacock-900/45" />
+        <Container className="relative py-20 sm:py-28">
           <Breadcrumbs
             crumbs={[
               { name: "Home", href: "/" },
               { name: "Markets", href: "/markets" },
             ]}
             className="mb-8"
+            onDark
           />
           <div className="max-w-3xl">
-            <Eyebrow>Markets</Eyebrow>
-            <h1 className="mt-5 type-title">
+            <h1 className="type-title text-ivory-50">
               Positioned to serve buyers worldwide.
             </h1>
-            <p className="mt-8 type-lead text-ink-600">
+            <p className="type-lead mt-8 text-ivory-50/80">
               India&apos;s agricultural and processed-food products already reach
               more than 200 countries and regions. We coordinate
               destination-specific specifications, labelling and documentation

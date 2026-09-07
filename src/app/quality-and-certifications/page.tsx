@@ -4,11 +4,13 @@ import { BuyerSpecNote } from "@/components/product/BuyerSpecNote";
 import { RfqCta } from "@/components/product/RfqCta";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { Container } from "@/components/shared/Container";
+import { Media } from "@/components/shared/Media";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { certifications, exportDocuments, visibleCertifications } from "@/data/certifications";
 import { generalFaqs } from "@/data/faqs";
+import { pageImages } from "@/data/images";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -97,7 +99,14 @@ export default function QualityPage() {
             intro="Where applicable, products are supported by the following documentation, coordinated per product and per destination."
             className="mb-12"
           />
-          <div className="ledger-scroll max-w-4xl">
+          <div className="mb-12 grid gap-8 lg:grid-cols-[1fr_1.35fr] lg:items-start">
+            <Media
+              image={pageImages.quality!}
+              ratio="4 / 3"
+              sizes="(min-width: 1024px) 34vw, 100vw"
+              className="border border-rule"
+            />
+            <div className="ledger-scroll">
             <table className="ledger">
               <caption className="sr-only">
                 Export documentation supplied with shipments
@@ -121,6 +130,7 @@ export default function QualityPage() {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
           <p className="ledger-foot max-w-4xl">
             COA available on request · Specifications confirmed before shipment

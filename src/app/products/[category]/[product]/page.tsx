@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type * as React from "react";
 
 import { BuyerSpecNote } from "@/components/product/BuyerSpecNote";
 import { RfqCta } from "@/components/product/RfqCta";
-import { SpecTable } from "@/components/product/SpecTable";
+import { SpecTableFilter } from "@/components/product/SpecTableFilter";
 import { VarietyCard } from "@/components/product/VarietyCard";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { Container } from "@/components/shared/Container";
@@ -61,7 +62,11 @@ export default async function ProductPage({
   const path = `/products/${category.slug}/${product.slug}`;
 
   return (
-    <>
+    <div
+      style={
+        { "--cat": category.accent, "--cat-tint": category.accentTint } as React.CSSProperties
+      }
+    >
       {featured.length > 0 ? (
         <JsonLd
           data={itemListJsonLd(
@@ -72,6 +77,7 @@ export default async function ProductPage({
       ) : null}
 
       <section className="border-b border-rule">
+        <div aria-hidden className="h-1 w-full bg-[var(--cat)]" />
         <Container className="py-16 sm:py-20">
           <Breadcrumbs crumbs={productCrumbs(category, product)} className="mb-8" />
           <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-16">
@@ -108,7 +114,7 @@ export default async function ProductPage({
             }
             className="mb-10"
           />
-          <SpecTable product={product} categorySlug={category.slug} />
+          <SpecTableFilter product={product} categorySlug={category.slug} />
           <BuyerSpecNote note={product.buyerSpecNote} className="mt-12" />
         </Container>
       </section>
@@ -170,6 +176,6 @@ export default async function ProductPage({
         categorySlug={category.slug}
         productSlug={product.slug}
       />
-    </>
+    </div>
   );
 }

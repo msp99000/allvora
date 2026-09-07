@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type * as React from "react";
 
 import { RfqCta } from "@/components/product/RfqCta";
 import { SpecTable } from "@/components/product/SpecTable";
@@ -46,7 +47,11 @@ export default async function CategoryPage({
   const items = productsInCategory(category.slug);
 
   return (
-    <>
+    <div
+      style={
+        { "--cat": category.accent, "--cat-tint": category.accentTint } as React.CSSProperties
+      }
+    >
       <JsonLd
         data={itemListJsonLd(
           `${category.name} products`,
@@ -58,6 +63,8 @@ export default async function CategoryPage({
       />
 
       <section className="border-b border-rule">
+        {/* The line's colour, held across every page beneath it. */}
+        <div aria-hidden className="h-1 w-full bg-[var(--cat)]" />
         <Container className="py-16 sm:py-20">
           <Breadcrumbs crumbs={categoryCrumbs(category)} className="mb-8" />
           <div className="max-w-3xl">
@@ -116,6 +123,6 @@ export default async function CategoryPage({
         body="Tell us the variety, grade, volume and destination. We respond within 24 hours."
         categorySlug={category.slug}
       />
-    </>
+    </div>
   );
 }

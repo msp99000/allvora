@@ -23,6 +23,7 @@ import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 const links = [
+  { href: "/", label: "Home" },
   { href: "/markets", label: "Markets" },
   { href: "/quality-and-certifications", label: "Quality & certifications" },
   { href: "/about", label: "About" },
@@ -41,7 +42,7 @@ export function Header() {
   }, []);
 
   const isActive = (href: string) =>
-    pathname === href || pathname.startsWith(`${href}/`);
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header

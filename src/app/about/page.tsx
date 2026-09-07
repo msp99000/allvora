@@ -4,11 +4,13 @@ import Link from "next/link";
 import { RfqCta } from "@/components/product/RfqCta";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { Container } from "@/components/shared/Container";
+import { Media } from "@/components/shared/Media";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import { FeatherArcUnderlay } from "@/components/shared/FeatherArc";
 import { Chips } from "@/components/shared/MarketChips";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/button";
+import { pageImages } from "@/data/images";
 import { site } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 
@@ -47,6 +49,7 @@ export default function AboutPage() {
             ]}
             className="mb-8"
           />
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-16">
           <div className="max-w-3xl">
             <Eyebrow>The company</Eyebrow>
             <h1 className="mt-5 type-title">
@@ -72,6 +75,14 @@ export default function AboutPage() {
                 transparent and efficient.
               </p>
             </div>
+          </div>
+          <Media
+            image={pageImages.about!}
+            ratio="4 / 3"
+            sizes="(min-width: 1024px) 38vw, 100vw"
+            priority
+            className="border border-rule"
+          />
           </div>
         </Container>
       </section>

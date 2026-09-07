@@ -189,6 +189,72 @@ export const productImages: Record<string, ImageAsset> = {
 };
 
 /**
+ * Images for the pages outside the product tree. Same contract: null renders a
+ * branded placeholder at the right ratio, so a page is never broken by a
+ * missing file.
+ */
+export const pageImages: Record<string, ImageAsset> = {
+  about: {
+    src: null,
+    alt: "Harvested crop drying in the sun on an Indian farm, shot wide in late afternoon light.",
+    brief: "Wide documentary landscape: red chillies or turmeric spread to dry on a drying yard in rural India, late golden light, low horizon, no faces. Establishes the supply base.",
+    tone: "spice",
+  },
+  sourcing: {
+    src: null,
+    alt: "Jute sacks of graded spices stacked in a sorting warehouse.",
+    brief: "Documentary interior: rows of filled and labelled jute sacks in a grading or sorting shed, weighing scale visible, cool daylight from high windows. Process rather than product.",
+    tone: "deep",
+  },
+  quality: {
+    src: null,
+    alt: "A spice sample being weighed and examined against a specification sheet in a testing lab.",
+    brief: "Close documentary: a small sample of ground spice on a laboratory balance beside a printed specification sheet and a sample jar, clinical daylight. Reads as testing, not cooking.",
+    tone: "leaf",
+  },
+  packaging: {
+    src: null,
+    alt: "Bulk export sacks beside retail-size pouches of the same product.",
+    brief: "A 25 kg export bag standing beside small retail pouches and a carton of the same product, plain unbranded packaging, neutral documentary light. Shows the bulk to retail range in one frame.",
+    tone: "grain",
+  },
+  markets: {
+    src: null,
+    alt: "Stacked shipping containers at an Indian port, seen from the dockside.",
+    brief: "Wide dockside view of stacked shipping containers and a gantry crane at an Indian container port, early morning haze, no readable shipping line branding.",
+    tone: "deep",
+  },
+  contact: {
+    src: null,
+    alt: "The doorway of an Indian spice warehouse, open to the loading yard.",
+    brief: "The open doorway of a warehouse seen from inside, bright loading yard beyond, sacks stacked either side. Warm and human without showing faces.",
+    tone: "spice",
+  },
+  "blog/1121-vs-1509-basmati": {
+    src: null,
+    alt: "Two piles of long-grain Basmati rice side by side for comparison.",
+    brief: "Overhead macro: two neat piles of raw long-grain Basmati side by side on dark slate, a fine line between them, subtly different grain lengths.",
+    tone: "grain",
+  },
+  "blog/black-pepper-grades-explained": {
+    src: null,
+    alt: "Black peppercorns separated into grade lots by berry size.",
+    brief: "Overhead macro: black peppercorns divided into three or four small separated lots of visibly different berry size, on dark slate.",
+    tone: "deep",
+  },
+  "blog/how-to-verify-an-indian-exporter": {
+    src: null,
+    alt: "Export documents, a rubber stamp and an ink pad on a desk.",
+    brief: "Close documentary still life: stacked export paperwork, a rubber stamp and ink pad, a pen, on a worn wooden desk. No readable text on the documents.",
+    tone: "grain",
+  },
+};
+
+export function pageImage(key: string): ImageAsset | undefined {
+  return pageImages[key];
+}
+
+/**
  * Optional per-variety overrides, keyed "productSlug/varietySlug". A variety
  * without one falls back to its product's photograph, and keeps that
  * photograph's alt text: describing a Sannam S4 photo as Teja S17 would be a
@@ -223,6 +289,9 @@ export function pendingPhotography(): { key: string; brief: string }[] {
   }
   for (const [key, asset] of Object.entries(varietyImages)) {
     if (!asset.src) pending.push({ key: `variety/${key}`, brief: asset.brief });
+  }
+  for (const [key, asset] of Object.entries(pageImages)) {
+    if (!asset.src) pending.push({ key: `page/${key}`, brief: asset.brief });
   }
   return pending;
 }

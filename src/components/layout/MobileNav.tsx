@@ -19,6 +19,7 @@ import { products } from "@/data/products";
 import { site } from "@/data/site";
 
 const secondaryLinks = [
+  { href: "/", label: "Home" },
   { href: "/markets", label: "Markets" },
   { href: "/quality-and-certifications", label: "Quality & certifications" },
   { href: "/private-label-and-packaging", label: "Private label & packaging" },

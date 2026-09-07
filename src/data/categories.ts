@@ -21,6 +21,18 @@ export interface Category {
   intro: string;
   seoTitle: string;
   seoDescription: string;
+  /**
+   * Per-line accent, drawn from the commodity itself: chilli red, moringa leaf,
+   * ghee amber, roast brown. This is wayfinding rather than decoration. A buyer
+   * moving between 11 products and 86 varieties learns which product line they
+   * are in from the colour before they read the breadcrumb.
+   *
+   * Each is AA on white and on the panel tint. None is used as text on dark
+   * grounds, where they fall below 4.5:1.
+   */
+  accent: string;
+  /** The same hue as a wash, for panels and hovers. */
+  accentTint: string;
 }
 
 export const categories: Category[] = [
@@ -36,6 +48,8 @@ export const categories: Category[] = [
     seoTitle: "Indian Spices Exporter: Varieties, Grades & Forms",
     seoDescription:
       "Indian spice exporter supplying red chilli, black pepper, cardamom and turmeric by named variety and grade, in whole, processed and custom forms, to buyer specification.",
+    accent: "#A8321B",
+    accentTint: "#F8EDEB",
   },
   {
     slug: "agri-natural",
@@ -48,6 +62,8 @@ export const categories: Category[] = [
     seoTitle: "Moringa, Coconut & Cocopeat Exporter from India",
     seoDescription:
       "Exporter of moringa leaf, powder and oil, coconut in fresh, copra, desiccated and oil formats, and cocopeat growing media from India, supplied to buyer specification.",
+    accent: "#3F6B34",
+    accentTint: "#EEF3EC",
   },
   {
     slug: "food",
@@ -61,6 +77,8 @@ export const categories: Category[] = [
     seoTitle: "Basmati Rice & Ghee Supplier from India",
     seoDescription:
       "Indian food supplier: Basmati rice in nine varieties across Raw, Steam, Sella and Golden Sella, plus ghee from standard cow grades to A2, bilona and organic.",
+    accent: "#8A6218",
+    accentTint: "#F6F1E6",
   },
   {
     slug: "tea-coffee",
@@ -74,6 +92,8 @@ export const categories: Category[] = [
     seoTitle: "Indian Tea & Coffee Bulk Supplier and Exporter",
     seoDescription:
       "Bulk supplier of Indian tea and coffee: Assam CTC, Darjeeling, Nilgiri and green teas, Arabica and Robusta grades, Monsooned Malabar and Mysore Nuggets specialty lots.",
+    accent: "#5E3F26",
+    accentTint: "#F2EEEA",
   },
 ];
 

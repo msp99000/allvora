@@ -177,3 +177,86 @@ fine for category and product pages, where they are representative. Two limits:
 - Replace them with real photographs of real lots as soon as you have them.
   A buyer who has visited a warehouse can tell, and real product photography is
   a genuine trust signal in this trade.
+
+---
+
+# Round two: 9 images for the rest of the site
+
+Same style anchor and negative prompt as above. These cover the pages outside
+the product tree, which currently render branded placeholders.
+
+**Save to `public/photography/pages/`** with these exact filenames.
+
+| # | Filename | Page | Ratio |
+|---|---|---|---|
+| 17 | `about.jpg` | /about | 4:3 |
+| 18 | `sourcing.jpg` | /about/sourcing-and-traceability | 4:3 |
+| 19 | `quality.jpg` | /quality-and-certifications | 4:3 |
+| 20 | `packaging.jpg` | /private-label-and-packaging | 4:3 |
+| 21 | `markets.jpg` | /markets (full-bleed dark band) | 16:9 |
+| 22 | `contact.jpg` | /contact | 4:3 |
+| 23 | `blog-1121-vs-1509.jpg` | blog post 1 | 16:9 |
+| 24 | `blog-pepper-grades.jpg` | blog post 2 | 16:9 |
+| 25 | `blog-verify-exporter.jpg` | blog post 3 | 16:9 |
+
+### 17. About, `about.jpg` (4:3)
+> [style anchor] Wide documentary landscape: dried red chillies spread across a
+> drying yard in rural India to dry in the sun, seen from a low angle in late
+> afternoon golden light, hills or trees on a low horizon. Vast quantity of
+> product. No people's faces.
+
+### 18. Sourcing and traceability, `sourcing.jpg` (4:3)
+> [style anchor] Documentary interior of an Indian grading and sorting shed:
+> rows of filled jute sacks stacked and tied, a mechanical weighing scale in
+> the middle ground, cool daylight falling from high windows. Process and
+> handling rather than product close-up.
+
+### 19. Quality and certifications, `quality.jpg` (4:3)
+> [style anchor] Close documentary shot in a food testing laboratory: a small
+> heap of ground spice on the pan of a digital laboratory balance, a glass
+> sample jar and a printed specification sheet beside it, clean clinical
+> daylight, stainless steel bench. Reads as analysis, not as cooking.
+
+### 20. Private label and packaging, `packaging.jpg` (4:3)
+> [style anchor] A 25 kg woven export sack standing upright beside three small
+> retail pouches and an open carton of the same spice, all packaging completely
+> plain and unbranded with no text, neutral grey backdrop, even soft light.
+> Shows the range from bulk to retail in one frame.
+
+### 21. Markets, `markets.jpg` (16:9) — full-bleed dark band
+> [style anchor] Wide dockside view of stacked shipping containers and a gantry
+> crane at an Indian container port at dawn, haze in the air, cool blue-grey
+> light with warm highlights. No readable shipping line names or logos. The left
+> third should be darker and less busy so a headline can sit over it.
+
+**Same left-third rule as the home hero.** The headline sits there.
+
+### 22. Contact, `contact.jpg` (4:3)
+> [style anchor] Seen from inside a warehouse looking out: a large open doorway
+> with bright daylight beyond, jute sacks stacked either side of the frame in
+> shadow, a loading yard visible outside. Silhouetted and warm, no faces.
+
+### 23. Blog, 1121 vs 1509, `blog-1121-vs-1509.jpg` (16:9)
+> [style anchor] Overhead macro: two neat separated piles of raw long-grain
+> Basmati rice side by side on dark slate, a clean gap between them, one pile
+> with visibly slightly longer grains than the other. Comparison is the subject.
+
+### 24. Blog, pepper grades, `blog-pepper-grades.jpg` (16:9)
+> [style anchor] Overhead macro: black peppercorns divided into four small
+> separated square lots on dark slate, each lot a visibly different berry size,
+> arranged in a row from largest to smallest. Grading is the subject.
+
+### 25. Blog, verifying an exporter, `blog-verify-exporter.jpg` (16:9)
+> [style anchor] Close documentary still life: a stack of export paperwork with
+> a rubber stamp resting on top, an ink pad and a pen beside it, on a worn
+> wooden desk. Papers deliberately angled so no text is legible. Warm side
+> light. Reads as verification and due diligence.
+
+### Extra care on these
+
+- **21 and 25 must not contain readable text.** Image models invent garbled
+  script on documents and container sides. Regenerate rather than accept it.
+- **20 must have blank packaging.** Any invented brand name on a sack makes the
+  image unusable.
+- **19 should not look like a kitchen.** If it comes back warm and domestic,
+  add "laboratory, clinical, stainless steel, scientific instrument".

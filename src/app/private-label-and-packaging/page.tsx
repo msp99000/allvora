@@ -3,10 +3,12 @@ import type { Metadata } from "next";
 import { RfqCta } from "@/components/product/RfqCta";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { Container } from "@/components/shared/Container";
+import { Media } from "@/components/shared/Media";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { generalFaqs } from "@/data/faqs";
+import { pageImages } from "@/data/images";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -84,6 +86,7 @@ export default function PrivateLabelPage() {
             ]}
             className="mb-8"
           />
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-16">
           <div className="max-w-3xl">
             <Eyebrow>Packaging</Eyebrow>
             <h1 className="mt-5 type-title">
@@ -98,6 +101,14 @@ export default function PrivateLabelPage() {
               and private-label packaging for brands. Specifications and packaging
               are confirmed in writing before shipment.
             </p>
+          </div>
+          <Media
+            image={pageImages.packaging!}
+            ratio="4 / 3"
+            sizes="(min-width: 1024px) 38vw, 100vw"
+            priority
+            className="border border-rule"
+          />
           </div>
         </Container>
       </section>

@@ -4,11 +4,13 @@ import Link from "next/link";
 import { RfqCta } from "@/components/product/RfqCta";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { Container } from "@/components/shared/Container";
+import { Media } from "@/components/shared/Media";
 import { Eyebrow } from "@/components/shared/Eyebrow";
 import { FeatherArcDivider } from "@/components/shared/FeatherArc";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { categories } from "@/data/categories";
 import { getProduct } from "@/data/products";
+import { pageImages } from "@/data/images";
 import { sourcingRegions, sourcingStages } from "@/data/sourcing";
 import { buildMetadata } from "@/lib/seo";
 
@@ -38,6 +40,7 @@ export default function SourcingPage() {
             ]}
             className="mb-8"
           />
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-16">
           <div className="max-w-3xl">
             <Eyebrow>Sourcing</Eyebrow>
             <h1 className="mt-5 type-title">
@@ -55,6 +58,14 @@ export default function SourcingPage() {
               crop year and processing at the specification stage, not after the
               container ships.
             </p>
+          </div>
+          <Media
+            image={pageImages.sourcing!}
+            ratio="4 / 3"
+            sizes="(min-width: 1024px) 38vw, 100vw"
+            priority
+            className="border border-rule"
+          />
           </div>
         </Container>
       </section>

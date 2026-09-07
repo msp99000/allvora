@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type * as React from "react";
 
 import { BuyerSpecNote } from "@/components/product/BuyerSpecNote";
 import { FormsBadges } from "@/components/product/FormsBadges";
@@ -72,10 +73,15 @@ export default async function VarietyPage({
   const image = varietyImage(product.slug, variety.slug);
 
   return (
-    <>
+    <div
+      style={
+        { "--cat": category.accent, "--cat-tint": category.accentTint } as React.CSSProperties
+      }
+    >
       <JsonLd data={productJsonLd(category, product, variety, path)} />
 
       <section className="border-b border-rule">
+        <div aria-hidden className="h-1 w-full bg-[var(--cat)]" />
         <Container className="py-16 sm:py-20">
           <Breadcrumbs crumbs={varietyCrumbs(category, product, variety)} className="mb-8" />
           <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-16">
@@ -208,6 +214,6 @@ export default async function VarietyPage({
         productSlug={product.slug}
         varietySlug={variety.slug}
       />
-    </>
+    </div>
   );
 }

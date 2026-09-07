@@ -72,7 +72,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
 
-        <TrustBar />
         <Header />
 
         <main id="main" className="flex-1">
