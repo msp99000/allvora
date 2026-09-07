@@ -153,9 +153,14 @@ error instead of a runtime 404.
 
 ### Add a photograph
 
-Every image slot on the site renders a branded placeholder until a real photo
-exists. Adding one is a single line, and nothing shifts because the slot already
-reserves its aspect ratio.
+All 16 image slots are filled. To replace one, or to add a slot, the change is a
+single line, and nothing shifts because the slot already reserves its aspect
+ratio.
+
+Images live in `public/photography/` as JPEG. Source files should be converted
+before committing: PNG exports from image models run 2 MB each and about 35 MB
+for a full set, against roughly 5 MB as quality-82 JPEG for no visible
+difference once `next/image` re-encodes to AVIF.
 
 1. Put the file in `public/photography/`, e.g. `public/photography/red-chilli.jpg`.
 2. In `src/data/images.ts`, set `src` on that entry:

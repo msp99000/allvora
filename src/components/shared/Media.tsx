@@ -71,6 +71,9 @@ export function Media({
           fill
           sizes={sizes}
           priority={priority}
+          {...(image.blurDataURL
+            ? { placeholder: "blur" as const, blurDataURL: image.blurDataURL }
+            : {})}
           className="object-cover"
         />
       ) : (

@@ -212,29 +212,45 @@ Swapping in Libre Caslon Text is a follow-up if the cards matter enough.
 
 ## 5. Not done
 
-- Real photography. The image system is built and wired in (see section 6), but
-  every slot is still a placeholder awaiting a photograph.
+- Photography. All 16 slots are filled with AI-generated images (see section 6).
+  They are representative rather than photographs of Allvora's own stock, and
+  they carry a visible generator watermark.
 - `/about/why-source-from-india/`, industries pages and product-plus-country
   pages. All marked P2 in Section 4.
 - The Phase 2 blog topic bank (7 further posts listed in Section 5.10).
 
 ---
 
-## 6. Photography: 15 slots awaiting a photograph
+## 6. Photography: 16 slots, filled with generated images
 
-The image system is built. Every slot renders a branded placeholder at the
-correct aspect ratio, with the alt text already written. Supplying a photograph
-is one line: drop the file in `public/photography/` and set `src` on that entry
-in `src/data/images.ts`. No layout changes, and nothing shifts, because the slot
-already reserves the space.
+All 16 slots now carry an image, in `public/photography/` as quality-82 JPEG,
+served through `next/image` as AVIF. Alt text was rewritten against what each
+image actually shows rather than against the shot brief.
 
-Art direction, from Section 3.3: macro texture shots of the actual commodity,
-consistent warm grade, documentary sourcing imagery. No stock-photo handshakes,
-no globe clip art.
+**Two things to know about them.**
+
+**They carry a visible watermark.** The images were produced by a generative
+model and several show its four-pointed sparkle mark in the lower right, clearly
+visible at full size on the hero, the category cards and the product images.
+This has deliberately not been removed: it is provenance marking on
+AI-generated content, and stripping it (by erasing or by cropping) misrepresents
+where the image came from. Options, in order of preference: replace with real
+photographs of real lots; regenerate on a tier that does not apply a visible
+mark; or accept it.
+
+**They are representative, not evidence.** They show the commodity, not
+Allvora's stock. That is normal and acceptable on category and product pages.
+It is why no generated image sits on a variety page implying a specific grade,
+and why alt text never names a variety.
+
+Replacing any of them is one line: drop the file into `public/photography/` and
+update `src` in `src/data/images.ts`. Regenerate its `blurDataURL` at the same
+time, or drop the field, in which case the image simply loads without a
+placeholder.
 
 ### Category slots (4), shown on the home page and /products/
 
-| Slot | What to shoot |
+| Slot | Art direction it was made to |
 |---|---|
 | `spices` | Macro group: whole dried red chilli, black peppercorns, green cardamom pods, broken turmeric fingers. Raked light for skin and wrinkle texture. |
 | `agri-natural` | Macro group: bright green moringa powder, white desiccated coconut, the fibrous brown face of a cocopeat block. The three colours carry the frame. |
@@ -243,7 +259,7 @@ no globe clip art.
 
 ### Product slots (11), shown on each product page and inherited by its varieties
 
-| Slot | What to shoot |
+| Slot | Art direction it was made to |
 |---|---|
 | `red-chilli` | Whole dried chilli filling the frame; skin wrinkle and deep red are the subject. Shoot a stemless variant too. |
 | `black-pepper` | Whole peppercorns; berry size and wrinkled surface, since buyers grade on size and density. |
